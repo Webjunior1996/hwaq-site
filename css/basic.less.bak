@@ -10,6 +10,12 @@ body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, li, pre, form, fieldset, l
     box-sizing: border-box;
     outline: none;
 }
+html[lang='sa'] {
+    direction: rtl;
+}
+svg {
+    direction: ltr;
+}
 body {
     font: 12px "Microsoft YaHei", "Arial";
     color: #000;
@@ -154,10 +160,10 @@ body, html {
     background-color: var(--color);
 }
 /* 浮动与清浮动 */
-.fl {
+.fl,html[lang='sa'] .fr {
     float: left;
 }
-.fr {
+.fr,html[lang='sa'] .fl {
     float: right;
 }
 .cl::after {
@@ -252,13 +258,13 @@ hr {
     -webkit-line-clamp: 8;
     overflow: hidden;
 }
-.txt-left {
+.txt-left,html[lang='sa'] .txt-right {
     text-align: left;
 }
 .txt-center {
     text-align: center;
 }
-.txt-right {
+.txt-right,html[lang='sa'] .txt-left {
     text-align: right;
 }
 [data-ahref] {
@@ -449,10 +455,10 @@ body {
     .mb-@{i} {
         margin-bottom: @scaledValue * 1px;
     }
-    .ml-@{i} {
+    .ml-@{i},html[lang='sa'] .mr-@{i} {
         margin-left: @scaledValue * 1px;
     }
-    .mr-@{i} {
+    .mr-@{i},html[lang='sa'] .ml-@{i} {
         margin-right: @scaledValue * 1px;
     }
     .pt-@{i} {
@@ -461,10 +467,10 @@ body {
     .pb-@{i} {
         padding-bottom: @scaledValue * 1px;
     }
-    .pl-@{i} {
+    .pl-@{i},html[lang='sa'] .pr-@{i} {
         padding-left: @scaledValue * 1px;
     }
-    .pr-@{i} {
+    .pr-@{i},html[lang='sa'] .pl-@{i} {
         padding-right: @scaledValue * 1px;
     }
     .slickGap-@{i} {
@@ -675,6 +681,10 @@ body {
     padding-left: 5%;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+html[lang='sa'] .seoPublic .Auxil-about .box .right {
+    padding-left: 0;
+    padding-right: 5%;
 }
 .seoPublic .Auxil-about .box .right div.h3 {
     font-size: 24px;
@@ -1165,6 +1175,7 @@ body {
 .slickBtn {
     font-size: 20px;
     display: flex;
+    direction: ltr;
     div {
         width: 2em;
         height: 2em;
@@ -1326,6 +1337,16 @@ body {
         ul {
             display: block;
         }
+    }
+}
+html[lang='sa'] .yuy {
+    ul li a img {
+        margin-right: 0;
+        margin-left: .5em;
+    }
+    #pups_from i.close {
+        left: 10px !important;
+        right: auto !important;
     }
 }
 .hover-text {
