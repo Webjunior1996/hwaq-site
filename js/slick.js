@@ -72,7 +72,7 @@
                 respondTo: 'window',
                 responsive: null,
                 rows: 1,
-                rtl: false,
+                rtl: document.documentElement.lang === 'sa',
                 slide: '',
                 slidesPerRow: 1,
                 slidesToShow: 1,
