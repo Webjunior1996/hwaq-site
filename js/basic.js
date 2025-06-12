@@ -48,6 +48,7 @@ $(document).ready(function () {
             correctLevel: 3
         });
     }
+    $("a[href$='.jpg'], a[href$='.jpeg'], a[href$='.png'], a[href$='.mp4']").fancybox();
 
     $(".svg").filter(function () {
         var that = $(this),
@@ -119,12 +120,12 @@ $(document).ready(function () {
             }, {
                 breakpoint: 700,
                 settings: {
-                    slidesToShow: Math.ceil(slickOptions.num * .3)
+                    slidesToShow: Math.ceil(slickOptions.num * .3)*T.hasClass('wap')?2:1
                 }
             }, {
                 breakpoint: 500,
                 settings: {
-                    slidesToShow: Math.ceil(slickOptions.num * .2)
+                    slidesToShow: Math.ceil(slickOptions.num * .2)*T.hasClass('wap')?2:1
                 }
             }]
         });
