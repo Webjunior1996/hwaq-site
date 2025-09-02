@@ -1,0 +1,259 @@
+{php}
+$port = $_SERVER['SERVER_PORT']%5;
+$mobile = '[mobile]'?:($port+1);
+$action = '[action]'?:'/product/';
+$logo = '[logo]'?:'logo.png';
+$search = '[search]'?:'s';
+$menuLang = [];
+switch (PRE){
+case 'cn':$menuLang = ['menu'=>'菜单', 'search'=>'搜索', 'language'=>'语言', 'back'=>'返回', 'share'=>'分享', 'exit'=>'退出'];break;
+case 'ru':$menuLang = ['menu'=>'Меню', 'search'=>'Поиск', 'language'=>'Язык', 'back'=>'Назад', 'share'=>'Делиться', 'exit'=>'Выход'];break;
+case 'fr':$menuLang = ['menu'=>'Menu', 'search'=>'Recherche', 'language'=>'Langue', 'back'=>'Dos', 'share'=>'Partager', 'exit'=>'Sortie'];break;
+case 'jp':$menuLang = ['menu'=>'メニュー', 'search'=>'検索', 'language'=>'言語', 'back'=>'戻る', 'share'=>'共有', 'exit'=>'出口'];break;
+case 'es':$menuLang = ['menu'=>'Menú', 'search'=>'Buscar', 'language'=>'Idioma', 'back'=>'Atrás', 'share'=>'Compartir', 'exit'=>'Salida'];break;
+case 'sa':$menuLang = ['menu'=>'قائمة طعام', 'search'=>'يبحث', 'language'=>'لغة', 'back'=>'خلف', 'share'=>'يشارك', 'exit'=>'مخرج'];break;
+case 'pt':$menuLang = ['menu'=>'Menu', 'search'=>'Pesquisa', 'language'=>'Idioma', 'back'=>'Costas', 'share'=>'Partilhar', 'exit'=>'Saída'];break;
+case 'de':$menuLang = ['menu'=>'Speisekarte', 'search'=>'Suchen', 'language'=>'Sprache', 'back'=>'Zurück', 'share'=>'Aktie', 'exit'=>'Ausfahrt'];break;
+case 'th':$menuLang = ['menu'=>'เมนู', 'search'=>'ค้นหา', 'language'=>'ภาษา', 'back'=>'กลับ', 'share'=>'แบ่งปัน', 'exit'=>'การออก'];break;
+case 'vi':$menuLang = ['menu'=>'Menu', 'search'=>'Tìm kiếm', 'language'=>'Ngôn ngữ', 'back'=>'Mặt sau', 'share'=>'Chia sẻ', 'exit'=>'Ra'];break;
+case 'id':$menuLang = ['menu'=>'Menu', 'search'=>'Mencari', 'language'=>'Bahasa', 'back'=>'Kembali', 'share'=>'Membagikan', 'exit'=>'KELUAR'];break;
+case 'it':$menuLang = ['menu'=>'Menu', 'search'=>'Ricerca', 'language'=>'Lingua', 'back'=>'Indietro', 'share'=>'Condividere', 'exit'=>'Uscita'];break;
+default:$menuLang = ['menu'=>'Menu', 'search'=>'Search', 'language'=>'Language', 'back'=>'Back', 'share'=>'Share', 'exit'=>'Exit'];break;
+}
+{/php}
+{php} if ($mobile == 1):{/php}
+<header class="page-header01 flex flex-jb flex-ac">
+    <div class="logo"><a href="/"><img src="{$site}/images/{$logo}" alt="{$config.cms_name}"/></a></div>
+    <button class="menu-btn" id="openMenu">{$menuLang['menu']}</button>
+</header>
+
+<div class="mobile-menu-wrap01 flex flex-je font-16" aria-hidden="true">
+    <div class="overlay" id="overlay"></div>
+    <nav class="mobile-menu flex flex-dc o-auto" id="mobileMenu">
+        <div class="menu-header">
+            <div class="logo"><a href="/"><img src="{$site}/images/{$logo}" alt="{$config.cms_name}"/></a></div>
+            <button class="close-btn" id="closeMenu"><i class="iconfont iconfont-close"></i></button>
+        </div>
+        
+        <div class="lang-panel">
+            {lang key="k" item="vo"}
+            <a href="{$k|get_lang_url}" class="lang-switch">{$k|get_lang_name}</a>
+            {/lang}
+        </div>
+        
+        <div class="stack o-auto">
+            <div class="panel active o-auto">
+                <div class="panel-header">
+                    <span class="panel-title">{$menuLang['menu']}</span>
+                </div>
+                <div class="panel-body o-auto">
+                    {:nav_bar()}
+                </div>
+            </div>
+        </div>
+        <form method="get" action="{$action}" class="flex mobileForm">
+            <input type="text" name="{$search}" placeholder="{$menuLang['search']}" />
+            <button type="submit"><i class="iconfont iconfont-sousuo5"></i></button>
+        </form>
+        <div class="menu-footer">
+            <a class="share-btn" href="{$config.facebook|default='javascript:void(0)'}"><i class="iconfont iconfont-facebook"></i></a>
+            <a class="share-btn" href="{$config.twitter|default='javascript:void(0)'}"><i class="iconfont iconfont-tuite"></i></a>
+            <a class="share-btn" href="{$config.whatsapp|default='javascript:void(0)'}"><i class="iconfont iconfont-whatapp1"></i></a>
+            <a class="share-btn" href="{$config.instagram|default='javascript:void(0)'}"><i class="iconfont iconfont-instagram-line"></i></a>
+            <a class="share-btn" href="{$config.youtube|default='javascript:void(0)'}"><i class="iconfont iconfont-youtube"></i></a>
+        </div>
+    </nav>
+</div>
+{php} endif;{/php}
+{php} if ($mobile == 2):{/php}
+<!--/2-->
+<header class="page-header02 flex flex-jb flex-ac">
+    <div class="logo"><a href="/"><img src="{$site}/images/{$logo}" alt="{$config.cms_name}"/></a></div>
+    <button class="menu-btn" id="openMenu">{$menuLang['menu']}</button>
+</header>
+
+<div class="menu-full" id="menuFull">
+    <div class="stack o-auto">
+        <div class="panel active">
+            <div class="panel-header flex flex-js flex-ac">
+                <span class="panel-title">{$menuLang['menu']}</span>
+                <button class="close-btn" id="closeMenu"><i class="iconfont iconfont-close"></i></button>
+            </div>
+            <div class="panel-body o-auto">
+                {:nav_bar()}
+            </div>
+        </div>
+    </div>
+    <div class="lang-panel">
+        {lang key="k" item="vo"}
+        <a href="{$k|get_lang_url}" class="lang-switch">{$k|get_lang_name}</a>
+        {/lang}
+    </div>
+    <form method="get" action="{$action}" class="flex mobileForm">
+        <input type="text" name="{$search}" placeholder="{$menuLang['search']}" />
+        <button type="submit"><i class="iconfont iconfont-sousuo5"></i></button>
+    </form>
+    <div class="menu-footer">
+        <a class="share-btn flex-i flex-ac flex-jc" href="{$config.facebook|default='javascript:void(0)'}"><i class="iconfont iconfont-facebook"></i></a>
+        <a class="share-btn flex-i flex-ac flex-jc" href="{$config.twitter|default='javascript:void(0)'}"><i class="iconfont iconfont-tuite"></i></a>
+        <a class="share-btn flex-i flex-ac flex-jc" href="{$config.whatsapp|default='javascript:void(0)'}"><i class="iconfont iconfont-whatapp1"></i></a>
+        <a class="share-btn flex-i flex-ac flex-jc" href="{$config.instagram|default='javascript:void(0)'}"><i class="iconfont iconfont-instagram-line"></i></a>
+        <a class="share-btn flex-i flex-ac flex-jc" href="{$config.youtube|default='javascript:void(0)'}"><i class="iconfont iconfont-youtube"></i></a>
+    </div>
+</div>
+{php} endif;{/php}
+{php} if ($mobile == 3):{/php}
+<!--/3-->
+<div id="mobile2">
+    <div class="oxy-header-row wid-100 block">
+        <div class="oxy-header-container flex">
+            <div class="logo"><a href="/"><img src="{$site}/images/{$logo}" alt="{$config.cms_name}" ></a></div>
+            <div class="oxy-header-center flex flex-ac"></div>
+            <div class="flex flex-ac">
+                <div class="oxy-nav-menu pl-12 pr-12 up-word">
+                    <div class="oxy-menu-toggle">
+                        <div class="oxy-nav-menu-hamburger-wrap flex flex-ac flex-jc">
+                            <div class="oxy-nav-menu-hamburger flex flex-jb flex-dc">
+                                <div class="oxy-nav-menu-hamburger-line"></div>
+                                <div class="oxy-nav-menu-hamburger-line"></div>
+                                <div class="oxy-nav-menu-hamburger-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-main-menu-container">
+                        {:nav_bar()}
+                        <div class="oxy-menu-langs wid-100 flex flex-dc flexGap-40 pt-40 pb-40 pl-20 pr-20">
+                            <div class="font-15 flex flex-jc flexGap-20"><i class="iconfont iconfont-diqiu"></i> <span>{$menuLang['language']}</span> <i class="iconfont iconfont-xiajiantou1"></i></div>
+                            <div class="flex flex-dc flex-ac flexGap-40 font-14">
+                                {lang key="k" item="vo"}
+                                <a href="{$k|get_lang_url}" class="flex flex-ac flexGap-20"><img src="{$site}/images/{$k}.jpg" ><span>{$k|get_lang_name}</span></a>
+                                {/lang}
+                            </div>
+                        </div>
+                        
+                        <div class="mb2-search">
+                            <div>
+                                <form method="get" action="{$action}" class="flex">
+                                    <input type="text" name="{$search}" placeholder="{$menuLang['search']}" />
+                                    <input type="submit" name="" id="" value="" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{php} endif;{/php}
+{php} if ($mobile == 4):{/php}
+<!--/4-->
+<div id="mobile3" class="">
+    <div class="m-logo"><a href="/"><img src="{$site}/images/{$logo}" alt=""></a>
+        <div class="m-btn">
+            <i class="ie1"></i>
+            <i class="ie2"></i>
+            <i class="ie3"></i>
+        </div>
+    </div>
+    <div class="box">
+        <div class="m-search Auxil-search">
+            <form action="{$action}">
+                <input type="text" name="{$search}" placeholder="{$_GET['s']|default='{$menuLang['search']}...'}">
+                <input type="submit" value="">
+            </form>
+        </div>
+        <div class="m-nav">
+            {:nav_bar()}
+        </div>
+        <div class="langs">
+            <h4>{$menuLang['language']}</h4>
+            <ul class="lang Auxil-language-wap">
+                {lang key="k" item="vo"}
+                <li><a href="{$k|get_lang_url}"><img src="{$site}/images/{$k}.jpg" alt=""> {$k|get_lang_name}</a></li>
+                {/lang}
+            </ul>
+        </div>
+        <h6><a href="tel:{$config.phone}"><i class="iconfont iconfont-phone1"></i> {$config.phone}</a></h6>
+    </div>
+</div>
+{php} endif;{/php}
+{php} if ($mobile == 5):{/php}
+<!--/5-->
+<div id="mobile5" class="white">
+    <div id="menu-on5">
+        <i class="line1"></i>
+        <i class="line2"></i>
+        <i class="line3"></i>
+    </div>
+    <div class="mobile-logo"><a href="/"><img src="{$site}/images/{$logo}" alt="{$config.cms_name}"></a></div>
+    <div class="menu-content">
+        <div class="menu-logo"><a href="/"><img src="{$site}/images/{$logo}" alt="{$config.cms_name}"></a></div>
+        <div class="menu-list">
+            <h3><i class="iconfont iconfont-lianjie"></i> {$menuLang['menu']}</h3>
+            {:nav_bar()}
+        </div>
+        <div class="mob-search">
+            <h3><i class="iconfont iconfont-sousuo5"></i> {$menuLang['search']}</h3>
+            <form method="get" action="{$action}">
+                <input type="text" placeholder="{$_GET['s']|default='{$menuLang['search']}...'}" name="{$search}" required="required" value="" />
+                <input type="submit" value="">
+            </form>
+        </div>
+        <div class="mob-yuy">
+            <h3><i class="iconfont iconfont-diqiu2"></i> {$menuLang['language']}</h3>
+            <ul class="lang">
+                {lang key="k" item="vo"}
+                <li><a href="{$k|get_lang_url}"><img src="{$site}/images/{$k}.jpg" alt=""> {$k|get_lang_name}</a></li>
+                {/lang}
+            </ul>
+        </div>
+        <div class="mob-share">
+            <h3><i class="iconfont iconfont-zan2"></i> {$menuLang['share']}</h3>
+            <ul class="grid-box">
+                <li class="column"><a href="{$config.facebook|default='javascript:void(0)'}"><i class="iconfont iconfont-facebook"></i></a></li>
+                <li class="column"><a href="{$config.twitter|default='javascript:void(0)'}"><i class="iconfont iconfont-tuite"></i></a></li>
+                <li class="column"><a href="{$config.whatsapp|default='javascript:void(0)'}"><i class="iconfont iconfont-whatapp1"></i></a></li>
+                <li class="column"><a href="{$config.instagram|default='javascript:void(0)'}"><i class="iconfont iconfont-instagram-line"></i></a></li>
+                <li class="column"><a href="{$config.youtube|default='javascript:void(0)'}"><i class="iconfont iconfont-youtube"></i></a></li>
+            </ul>
+        </div>
+        <div id="menu-off5"><h3><i class="iconfont iconfont-close"></i> {$menuLang['exit']}</h3></div>
+    </div>
+</div>
+{php} endif;{/php}
+<script type="text/javascript" defer src="{$cdn}/js/mobile.js?type={php}echo $mobile;{/php}"></script>
+<!--/banner && inner banner-->
+{php} if ($is_home):{/php}
+{adv pid="2" item="v" html="1" key="ad"}
+{/adv}
+{php} if ($ad):{/php}
+<div id="indexMobileBanner" hidden class="colorWhite">
+    <ul class="slick one">
+        {adv pid="2" item="v" html="1"}
+        <li >
+            <div class="box pre backImg-fixed flex flex-ac flex-jc pl-16 pr-16 txt-center" style="background-image: url('{$v['thumb']}');">
+                <div class="cont">
+                    <div class="title font-bold">{$v['text1']|default='Welcome to'}</div>
+                    <div class="des mt-20"><p>{$v['text2']|default=$config['cms_name']}</p></div>
+                </div>
+            </div>
+        </li>
+        {/adv}
+    </ul>
+</div>
+{php} endif;{/php}
+{php} else:{/php}
+<div id="innerMobileBanner" hidden class="">
+    <div class="container">
+        <div class="title font-bold">
+            {$cat_detail['cat_name']}
+        </div>
+        <div class="mbx mt-20">
+            {:get_link()}
+        </div>
+    </div>
+</div>
+{php} endif;{/php}
