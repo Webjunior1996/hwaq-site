@@ -13,7 +13,8 @@
 
 ## version:20250902
 增加：  
-1.手机版模板文件 可自由切换5种手机版 {include file="index/header-mobile" mobile="0" action="/product/" logo="logo.png" search="s"/}  
+1.手机版模板文件 可自由切换5种手机版   
+  {include file="index/header-mobile" mobile="0" action="/product/" logo="logo.png" search="s"/}  
   // mobile 有五种选择 1-5  默认为0 随机  
   // action 搜索页面  
   // logo logo图片名称  
