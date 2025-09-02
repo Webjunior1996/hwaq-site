@@ -97,47 +97,7 @@
             </div>
         </div>
     </div>
-    <div id="mobile" class="white">
-        <div id="menu-on">
-            <i class="line1"></i>
-            <i class="line2"></i>
-            <i class="line3"></i>
-        </div>
-        <div class="mobile-logo"><a href="/"><img src="{$site}/images/logo.png" alt="{$config.cms_name}"></a></div>
-        <div class="menu-content">
-            <div class="menu-logo"><a href="/"><img src="{$site}/images/logo.png" alt="{$config.cms_name}"></a></div>
-            <div class="menu-list">
-                <h3><i class="iconfont iconfont-lianjie"></i> Web Menu</h3>
-                {:nav_bar()}
-            </div>
-            <div class="mob-search">
-                <h3><i class="iconfont iconfont-sousuo5"></i> Product Search</h3>
-                <form method="get" action="/product/">
-                    <input type="text" placeholder="{$_GET['s']|default='Search...'}" name="s" required="required" value="" />
-                    <input type="submit" value="">
-                </form>
-            </div>
-            <div class="mob-yuy">
-                <h3><i class="iconfont iconfont-diqiu2"></i> Language</h3>
-                <ul class="lang">
-                    {lang key="k" item="vo"}
-                    <li><a href="{$k|get_lang_url}"><img src="{$site}/images/{$k}.jpg" alt=""> {$k|get_lang_name}</a></li>
-                    {/lang}
-                </ul>
-            </div>
-            <div class="mob-share">
-                <h3><i class="iconfont iconfont-zan2"></i> Share</h3>
-                <ul class="grid-box">
-                    <li class="column"><a href="{$config.facebook|default='javascript:void(0)'}"><i class="iconfont iconfont-facebook"></i></a></li>
-                    <li class="column"><a href="{$config.twitter|default='javascript:void(0)'}"><i class="iconfont iconfont-tuite"></i></a></li>
-                    <li class="column"><a href="{$config.whatsapp|default='javascript:void(0)'}"><i class="iconfont iconfont-whatapp1"></i></a></li>
-                    <li class="column"><a href="{$config.instagram|default='javascript:void(0)'}"><i class="iconfont iconfont-instagram-line"></i></a></li>
-                    <li class="column"><a href="{$config.youtube|default='javascript:void(0)'}"><i class="iconfont iconfont-youtube"></i></a></li>
-                </ul>
-            </div>
-            <div id="menu-off"><h3><i class="iconfont iconfont-close"></i> Exit Menu</h3></div>
-        </div>
-    </div>
+    {include file="index/header-mobile" mobile="0" action="/product/" logo="logo.png" search="s"/}
     <div class="clear"></div>
 
     <!--===================== BANNER =====================-->
