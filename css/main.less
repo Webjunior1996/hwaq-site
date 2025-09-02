@@ -20,11 +20,11 @@
 }
 
 body {font-family: "jlwmy";max-width: 1920px;
-  --color:#de751e;
+  --color:#c30d23;
   font-weight: normal;
   margin: 0 auto;}
 .container{
-  width: 100%;
+  width: 1750px;
 }
 .body-overflow-box {
   position: relative;
@@ -44,8 +44,6 @@ body {font-family: "jlwmy";max-width: 1920px;
   left: 0;
   .nav {
     .ui.menu {
-      display: flex;
-      justify-content: space-between;
       margin: 0 auto;
       .logo {
         display: inline-block;
@@ -369,6 +367,13 @@ body {font-family: "jlwmy";max-width: 1920px;
 #banner .theme-default .nivo-controlNav a.active {
   border-color: var(--color) !important;
 }
+
+@media screen and (max-width: 1000px){
+  #banner,.inner-banner {
+    margin-top: 40px;
+  }
+
+}
 #spotlight.show {
   display: inline-block;
   background: rgba(0,0,0,.3) !important;
@@ -381,20 +386,14 @@ body {font-family: "jlwmy";max-width: 1920px;
   background: black !important;
 }
 #banner {
-  background-position: center bottom;
-  background-size: 100% auto;
-  background-color: #161514;
-  background-repeat: no-repeat;
-  position: relative;
-  z-index: 1;
-  .bg {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: -1;
-    img {
-      opacity: 0;
+  li {
+    position: relative;
+    .content {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }
