@@ -228,6 +228,7 @@ default:$menuLang = ['menu'=>'Menu', 'search'=>'Search', 'language'=>'Language',
 <!--/banner && inner banner-->
 {php} if ($is_home):{/php}
 {adv pid="2" item="v" html="1" key="ad"}
+{php}$ad++;{/php}
 {/adv}
 {php} if ($ad):{/php}
 <div id="indexMobileBanner" hidden class="colorWhite">
@@ -256,4 +257,5 @@ default:$menuLang = ['menu'=>'Menu', 'search'=>'Search', 'language'=>'Language',
         </div>
     </div>
 </div>
+
 {php} endif;{/php}
