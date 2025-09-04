@@ -14,9 +14,11 @@
 ## version:20250902
 增加：  
 1.手机版模板文件 可自由切换5种手机版   
-  {include file="index/header-mobile" mobile="0" action="/product/" logo="logo.png" search="s"/}  
+  {include file="index/header-mobile" mobile="0" action="/product/" logo="logo.png" search="s" innerBanner="2" innerImg="0"/}  
   // mobile 有五种选择 1-5  默认为0 随机  
   // action 搜索页面  
   // logo logo图片名称  
   // search 搜索参数名称  
+  // innerBanner 0 不启用 1 带图版 2无图版  
+  // innerImg 0 默认图 or 图片链接  
 2.调整main.less文件内容 移除默认手机版内容  
