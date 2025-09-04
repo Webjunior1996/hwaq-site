@@ -576,7 +576,7 @@ body {
         display: block !important;
     }
     #banner,.inner-banner {
-        margin-top: 40px;
+        margin-top: 60px;
     }
 }
 @media screen and (max-width: 1000px){
@@ -2335,81 +2335,113 @@ html[lang='sa'] .slick-slide {
     }
 }
 @media (max-width: 1250px) {
-    #innerMobileBanner~.inner-banner,#indexMobileBanner~#banner {
+    #innerMobileBanner~.inner-banner {
         display: none !important;
     }
     .mobile-menu-wrap01,#menuFull {
-        &~#innerMobileBanner,&~#indexMobileBanner,&~#banner {
+        &~#innerMobileBanner,&~#indexMobileBanner,&~#banner,&~.inner-banner {
             margin-top: 0 !important;
         }
     }
 
 }
-@media (max-width: 1000px) {
-    /* 手机端内页banner */
+@media (max-width: 1250px) {
     #innerMobileBanner {
         display: block;
-        padding: 40px 0;
+    }
+    #innerMobileBanner .banner1 .imgC img {
         width: 100%;
-        background: #f5f5f5;
+    }
+    #innerMobileBanner .banner1 .imgC .text {
+        width: 100%;
+        z-index: 2;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    #innerMobileBanner .banner1 .mbx {
+        max-width: 98%;
+        width: 100%;
+        line-height: 1.8;
+        font-size: 16px;
+        color: #000;
+        background-color: rgba(255, 255, 255, 0.6);
         border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: -20px auto 0;
+        z-index: 2;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
-    #innerMobileBanner .container .title {
-        font-size: 20px;
-        line-height: 1.6;
-        color: #333;
-    }
-    #innerMobileBanner .container .mbx {
-        font-size: 14px;
-        color: #666;
-        gap: 5px;
-        line-height: 2;
-    }
-    #innerMobileBanner .container .mbx span {
-        color: #999;
-    }
-    #innerMobileBanner .container .mbx a {
-        color: #999;
+    #innerMobileBanner .banner1 .mbx a {
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        -moz-transition: all 0.5s;
         transition: all 0.5s;
-        text-decoration: underline;
-        text-decoration-color: rgba(0, 0, 0, 0);
     }
-    #innerMobileBanner .container .mbx a:hover {
+    #innerMobileBanner .banner1 .mbx a:hover {
         color: var(--color);
-        text-decoration-color: var(--color);
     }
-
-    /* 手机端内页banner 背景换为网站主题色的版本*/
-    #innerMobileBanner.colorActive {
-        background-color: var(--color);
-    }
-    #innerMobileBanner.colorActive .container .title {
+    #innerMobileBanner .banner1.colorWhite {
         color: #fff;
     }
-    #innerMobileBanner.colorActive .container .mbx {
-        color: #fff;
+    #innerMobileBanner .banner2 {
+        background-image: -webkit-linear-gradient(250deg, #567d8e, rgba(255, 255, 255, 0.5));
+        background-image: -moz-linear-gradient(250deg, #567d8e, rgba(255, 255, 255, 0.5));
+        background-image: -o-linear-gradient(250deg, #567d8e, rgba(255, 255, 255, 0.5));
+        background-image: linear-gradient(-160deg, #567d8e, rgba(255, 255, 255, 0.5));
     }
-    #innerMobileBanner.colorActive .container .mbx span,
-    #innerMobileBanner.colorActive .container .mbx a {
-        color: #fff;
+    #innerMobileBanner .banner2 .text {
+        font-weight: bold;
+        font-size: 30px;
     }
-    #innerMobileBanner.colorActive .container .mbx a:hover {
-        text-decoration-color: #fff;
+    #innerMobileBanner .banner2 .mbx {
+        margin: 40px auto 0;
+        max-width: 98%;
+    }
+    #innerMobileBanner .banner2 .mbx .cont {
+        border-radius: 10px;
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        padding: 10px;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+    #innerMobileBanner .banner2 .mbx .cont a {
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    #innerMobileBanner .banner2 .mbx .cont a:hover {
+        color: red;
+    }
+    #innerMobileBanner .banner2.colorWhite {
+        color: #fff;
     }
 }
 @media (max-width: 500px) {
-    /* 手机端首页banner */
+    #innerMobileBanner .banner1 .imgC .text {
+        font-size: 24px;
+    }
+}
+@media (max-width: 700px) {
+    #indexMobileBanner~#banner {
+        display: none !important;
+    }
     #indexMobileBanner {
-        margin-top: 40px;
+        margin-top: 60px;
         display: block;
     }
     #indexMobileBanner ul li {
-        height: calc(80vh - 40px);
+        height: calc(~'80vh - 60px');
     }
     #indexMobileBanner ul li .box {
         background-color: var(--color);
         height: 100%;
+        -o-background-size: cover;
         background-size: cover;
     }
     #indexMobileBanner ul li .box .title {
@@ -2418,7 +2450,6 @@ html[lang='sa'] .slick-slide {
     #indexMobileBanner ul li .box .des {
         font-size: 16px;
     }
-    /* 手机端首页banner 字体颜色改为白色版本 */
     #indexMobileBanner.colorWhite {
         color: #fff;
     }
@@ -2466,8 +2497,8 @@ html.mobile {
         position: absolute;
         right: 100%;
         width: 100vw;
-        height: 40px;
-        line-height: 40px;
+        height: 60px;
+        line-height: 60px;
         text-align: center;
         background: #111;
         -moz-box-shadow: 0 0 10px rgba(255,255,255,.2);
