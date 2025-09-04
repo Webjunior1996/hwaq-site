@@ -1,24 +1,26 @@
 {php}
-$port = $_SERVER['SERVER_PORT']%5;
-$mobile = '[mobile]'?:($port+1);
+$port = $_SERVER['SERVER_PORT'];
+$mobile = '[mobile]'?:(($port%5)+1);
 $action = '[action]'?:'/product/';
 $logo = '[logo]'?:'logo.png';
 $search = '[search]'?:'s';
+$innerBanner = '[innerBanner]'?:0;
+$innerImg = '[innerImg]'?:'https://hqcdn.hqsmartcloud.com/edwin-pump/2025/09/02/index_banner.jpg';
 $menuLang = [];
 switch (PRE){
-case 'cn':$menuLang = ['menu'=>'菜单', 'search'=>'搜索', 'language'=>'语言', 'back'=>'返回', 'share'=>'分享', 'exit'=>'退出'];break;
-case 'ru':$menuLang = ['menu'=>'Меню', 'search'=>'Поиск', 'language'=>'Язык', 'back'=>'Назад', 'share'=>'Делиться', 'exit'=>'Выход'];break;
-case 'fr':$menuLang = ['menu'=>'Menu', 'search'=>'Recherche', 'language'=>'Langue', 'back'=>'Dos', 'share'=>'Partager', 'exit'=>'Sortie'];break;
-case 'jp':$menuLang = ['menu'=>'メニュー', 'search'=>'検索', 'language'=>'言語', 'back'=>'戻る', 'share'=>'共有', 'exit'=>'出口'];break;
-case 'es':$menuLang = ['menu'=>'Menú', 'search'=>'Buscar', 'language'=>'Idioma', 'back'=>'Atrás', 'share'=>'Compartir', 'exit'=>'Salida'];break;
-case 'sa':$menuLang = ['menu'=>'قائمة طعام', 'search'=>'يبحث', 'language'=>'لغة', 'back'=>'خلف', 'share'=>'يشارك', 'exit'=>'مخرج'];break;
-case 'pt':$menuLang = ['menu'=>'Menu', 'search'=>'Pesquisa', 'language'=>'Idioma', 'back'=>'Costas', 'share'=>'Partilhar', 'exit'=>'Saída'];break;
-case 'de':$menuLang = ['menu'=>'Speisekarte', 'search'=>'Suchen', 'language'=>'Sprache', 'back'=>'Zurück', 'share'=>'Aktie', 'exit'=>'Ausfahrt'];break;
-case 'th':$menuLang = ['menu'=>'เมนู', 'search'=>'ค้นหา', 'language'=>'ภาษา', 'back'=>'กลับ', 'share'=>'แบ่งปัน', 'exit'=>'การออก'];break;
-case 'vi':$menuLang = ['menu'=>'Menu', 'search'=>'Tìm kiếm', 'language'=>'Ngôn ngữ', 'back'=>'Mặt sau', 'share'=>'Chia sẻ', 'exit'=>'Ra'];break;
-case 'id':$menuLang = ['menu'=>'Menu', 'search'=>'Mencari', 'language'=>'Bahasa', 'back'=>'Kembali', 'share'=>'Membagikan', 'exit'=>'KELUAR'];break;
-case 'it':$menuLang = ['menu'=>'Menu', 'search'=>'Ricerca', 'language'=>'Lingua', 'back'=>'Indietro', 'share'=>'Condividere', 'exit'=>'Uscita'];break;
-default:$menuLang = ['menu'=>'Menu', 'search'=>'Search', 'language'=>'Language', 'back'=>'Back', 'share'=>'Share', 'exit'=>'Exit'];break;
+case 'cn':$menuLang = ['menu'=>'菜单', 'search'=>'搜索', 'language'=>'语言', 'back'=>'返回', 'share'=>'分享', 'exit'=>'退出', 'welcome'=>'欢迎访问'];break;
+case 'ru':$menuLang = ['menu'=>'Меню', 'search'=>'Поиск', 'language'=>'Язык', 'back'=>'Назад', 'share'=>'Делиться', 'exit'=>'Выход', 'welcome'=>'Добро пожаловать'];break;
+case 'fr':$menuLang = ['menu'=>'Menu', 'search'=>'Recherche', 'language'=>'Langue', 'back'=>'Dos', 'share'=>'Partager', 'exit'=>'Sortie', 'welcome'=>'Bienvenue à visiter'];break;
+case 'jp':$menuLang = ['menu'=>'メニュー', 'search'=>'検索', 'language'=>'言語', 'back'=>'戻る', 'share'=>'共有', 'exit'=>'出口', 'welcome'=>'ようこそ'];break;
+case 'es':$menuLang = ['menu'=>'Menú', 'search'=>'Buscar', 'language'=>'Idioma', 'back'=>'Atrás', 'share'=>'Compartir', 'exit'=>'Salida', 'welcome'=>'Bienvenido a visitar'];break;
+case 'sa':$menuLang = ['menu'=>'قائمة طعام', 'search'=>'يبحث', 'language'=>'لغة', 'back'=>'خلف', 'share'=>'يشارك', 'exit'=>'مخرج', 'welcome'=>'مرحبا بكم في زيارة'];break;
+case 'pt':$menuLang = ['menu'=>'Menu', 'search'=>'Pesquisa', 'language'=>'Idioma', 'back'=>'Costas', 'share'=>'Partilhar', 'exit'=>'Saída', 'welcome'=>'Bem-vindo à visita'];break;
+case 'de':$menuLang = ['menu'=>'Speisekarte', 'search'=>'Suchen', 'language'=>'Sprache', 'back'=>'Zurück', 'share'=>'Aktie', 'exit'=>'Ausfahrt', 'welcome'=>'Willkommen zu besuchen'];break;
+case 'th':$menuLang = ['menu'=>'เมนู', 'search'=>'ค้นหา', 'language'=>'ภาษา', 'back'=>'กลับ', 'share'=>'แบ่งปัน', 'exit'=>'การออก', 'welcome'=>'ยินดีต้อนรับเข้าสู่'];break;
+case 'vi':$menuLang = ['menu'=>'Menu', 'search'=>'Tìm kiếm', 'language'=>'Ngôn ngữ', 'back'=>'Mặt sau', 'share'=>'Chia sẻ', 'exit'=>'Ra', 'welcome'=>'Chào mừng đến thăm'];break;
+case 'id':$menuLang = ['menu'=>'Menu', 'search'=>'Mencari', 'language'=>'Bahasa', 'back'=>'Kembali', 'share'=>'Membagikan', 'exit'=>'KELUAR', 'welcome'=>'Selamat datang'];break;
+case 'it':$menuLang = ['menu'=>'Menu', 'search'=>'Ricerca', 'language'=>'Lingua', 'back'=>'Indietro', 'share'=>'Condividere', 'exit'=>'Uscita', 'welcome'=>'Benvenuto'];break;
+default:$menuLang = ['menu'=>'Menu', 'search'=>'Search', 'language'=>'Language', 'back'=>'Back', 'share'=>'Share', 'exit'=>'Exit', 'welcome'=>'Welcome to'];break;
 }
 {/php}
 {php} if ($mobile == 1):{/php}
@@ -237,7 +239,7 @@ default:$menuLang = ['menu'=>'Menu', 'search'=>'Search', 'language'=>'Language',
         <li >
             <div class="box pre backImg-fixed flex flex-ac flex-jc pl-16 pr-16 txt-center" style="background-image: url('{$v['thumb']}');">
                 <div class="cont">
-                    <div class="title font-bold">{$v['text1']|default='Welcome to'}</div>
+                    <div class="title font-bold">{$v['text1']|default=$menuLang['welcome']}</div>
                     <div class="des mt-20"><p>{$v['text2']|default=$config['cms_name']}</p></div>
                 </div>
             </div>
@@ -247,15 +249,43 @@ default:$menuLang = ['menu'=>'Menu', 'search'=>'Search', 'language'=>'Language',
 </div>
 {php} endif;{/php}
 {php} else:{/php}
+{if condition="$innerBanner"}
 <div id="innerMobileBanner" hidden class="">
-    <div class="container">
-        <div class="title font-bold">
-            {$cat_detail['cat_name']}
+    {if condition="$innerBanner == 1"}
+    <div class="banner1 colorWhite">
+        <div class="imgC pre">
+            <img src="{$innerImg}" alt="{$config.cms_name}">
+            <div class="text pos pos-center txt-center">
+                <div class="container">
+                    <p>{$cat_detail['cat_name']}</p>
+                </div>
+            </div>
         </div>
-        <div class="mbx mt-20">
-            {:get_link()}
+        <div class="mbx Auxil-crumbs pt-10 pb-10 pre">
+            <div class="container">
+                <div class="cont">
+                    {:get_link()}
+                </div>
+            </div>
         </div>
     </div>
+    {/if}
+    {if condition="$innerBanner == 2"}
+    <div class="banner2 pt-120 pb-40 colorWhite">
+        <div class="text txt-center">
+            <div class="container">
+                <p>{$cat_detail['cat_name']}</p>
+            </div>
+        </div>
+        <div class="mbx Auxil-crumbs">
+            <div class="container">
+                <div class="cont">
+                    {:get_link()}
+                </div>
+            </div>
+        </div>
+    </div>
+    {/if}
 </div>
-
+{/if}
 {php} endif;{/php}
