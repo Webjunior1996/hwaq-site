@@ -88,7 +88,8 @@
                 vertical: false,
                 verticalSwiping: false,
                 waitForAnimate: true,
-                zIndex: 1000
+                zIndex: 1000,
+                wheel:false
             };
 
             _.initials = {
@@ -117,7 +118,7 @@
                 $list: null,
                 touchObject: {},
                 transformsEnabled: false,
-                unslicked: false
+                unslicked: false,
             };
 
             $.extend(_, _.initials);
@@ -1306,6 +1307,8 @@
 
         }
 
+        _.wheelFunc();
+
         if (creation) {
             _.$slider.trigger('init', [_]);
         }
@@ -1922,6 +1925,41 @@
 
     };
 
+    Slick.prototype.wheelFunc = function (){
+        var _ = this;
+        if (_.options.wheel === true) {
+            _.$slider.on('wheel.slick', function(event) {
+                var e = event.originalEvent || event;
+                var delta = e.deltaY;
+                var currentIndex = _.currentSlide;
+                var slideCount = _.slideCount;
+
+                if (_.options.infinite) {
+                    event.preventDefault();
+
+                    if (delta > 0) {
+                        _.slickNext();
+                    } else {
+                        _.slickPrev();
+                    }
+                } else {
+                    if (delta > 0) { // 向下
+                        if (currentIndex < slideCount - 1) {
+                            event.preventDefault();
+                            _.slickNext();
+                        }
+                    } else { // 向上
+                        if (currentIndex > 0) {
+                            event.preventDefault();
+                            _.slickPrev();
+                        }
+                    }
+                }
+            });
+
+        }
+    }
+
     Slick.prototype.reinit = function() {
 
         var _ = this;
@@ -1964,6 +2002,8 @@
 
         _.setPosition();
         _.focusHandler();
+
+        _.wheelFunc();
 
         _.paused = !_.options.autoplay;
         _.autoPlay();
@@ -2181,10 +2221,47 @@
 
 
         } else if ( type === 'multiple' ) {
-
             $.each( option , function( opt, val ) {
 
-                _.options[opt] = val;
+                if (opt === 'responsive') {
+                    if (val !== null) {
+                        _.options[opt] = (function(arr1, arr2){
+                            var result = [];
+                            var map = {};
+
+                            for (var i = 0; i < arr1.length; i++) {
+                                var item = arr1[i];
+                                map[item.id] = item;
+                            }
+
+                            for (var j = 0; j < arr2.length; j++) {
+                                var item = arr2[j];
+                                if (map[item.id]) {
+                                    for (var key in item) {
+                                        if (item.hasOwnProperty(key)) {
+                                            map[item.id][key] = item[key];
+                                        }
+                                    }
+                                } else {
+                                    map[item.id] = item;
+                                }
+                            }
+
+                            for (var k in map) {
+                                if (map.hasOwnProperty(k)) {
+                                    result.push(map[k]);
+                                }
+                            }
+
+                            return result;
+                        })(_.options[opt], val);
+
+                    }else {
+                        _.options[opt] = val;
+                    }
+                }else {
+                    _.options[opt] = val;
+                }
 
             });
 
