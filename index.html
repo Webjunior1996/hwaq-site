@@ -97,7 +97,7 @@
             </div>
         </div>
     </div>
-    {include file="index/header-mobile" mobile="0" action="/product/" logo="logo.png" search="s"/}
+    {include file="index/header-mobile" mobile="0" action="/search/" logo="logo.png" search="s" innerBanner="2" innerImg="0"/}
     <div class="clear"></div>
 
     <!--===================== BANNER =====================-->
@@ -149,13 +149,13 @@
     <div id="wap-bottom">
         <div class="flex flex-js flex-ac font-14 txt-center">
             <div class="left flex">
-                <a href="{$config.twitter|default='javascript:void(0)'}" target="_blank">
-                    <i class="iconfont iconfont-tuite block"></i>
-                    X
+                <a href="{$nav[3]['url']}">
+                    <i class="iconfont iconfont-gongsi block"></i>
+                    {$nav[3]['cat_name']}
                 </a>
-                <a href="{$config.facebook|default='javascript:void(0)'}" target="_blank">
-                    <i class="iconfont iconfont-facebook block"></i>
-                    Facebook
+                <a href="{$nav[2]['url']}">
+                    <i class="iconfont iconfont-news block"></i>
+                    {$nav[2]['cat_name']}
                 </a>
             </div>
             <div class="center">
@@ -164,13 +164,13 @@
                 </a>
             </div>
             <div class="right flex">
-                <a href="{$nav[3]['url']}">
-                    <i class="iconfont iconfont-gongsi block"></i>
-                    {$nav[3]['cat_name']}
+                <a href="mailto:{$config.email}">
+                    <i class="iconfont iconfont-pencil block"></i>
+                    {$config.email}
                 </a>
-                <a href="{$nav[2]['url']}">
-                    <i class="iconfont iconfont-news block"></i>
-                    {$nav[2]['cat_name']}
+                <a href="tel:{$config.phone}">
+                    <i class="iconfont iconfont-dianhua2 block"></i>
+                    {$config.phone}
                 </a>
             </div>
         </div>
