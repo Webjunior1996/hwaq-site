@@ -60,7 +60,7 @@ default:$menuLang = ['menu'=>'Menu', 'search'=>'Search', 'language'=>'Language',
         <div class="menu-footer">
             <a class="share-btn" href="{$config.facebook|default='javascript:void(0)'}"><i class="iconfont iconfont-facebook"></i></a>
             <a class="share-btn" href="{$config.twitter|default='javascript:void(0)'}"><i class="iconfont iconfont-tuite"></i></a>
-            <a class="share-btn" href="{$config.whatsapp|default='javascript:void(0)'}"><i class="iconfont iconfont-whatapp1"></i></a>
+            <a class="share-btn" href="{$config.whatsapp?'https://wa.me/'.$config.whatsapp:'javascript:void(0)'}"><i class="iconfont iconfont-whatapp1"></i></a>
             <a class="share-btn" href="{$config.instagram|default='javascript:void(0)'}"><i class="iconfont iconfont-instagram-line"></i></a>
             <a class="share-btn" href="{$config.youtube|default='javascript:void(0)'}"><i class="iconfont iconfont-youtube"></i></a>
         </div>
@@ -98,7 +98,7 @@ default:$menuLang = ['menu'=>'Menu', 'search'=>'Search', 'language'=>'Language',
     <div class="menu-footer">
         <a class="share-btn flex-i flex-ac flex-jc" href="{$config.facebook|default='javascript:void(0)'}"><i class="iconfont iconfont-facebook"></i></a>
         <a class="share-btn flex-i flex-ac flex-jc" href="{$config.twitter|default='javascript:void(0)'}"><i class="iconfont iconfont-tuite"></i></a>
-        <a class="share-btn flex-i flex-ac flex-jc" href="{$config.whatsapp|default='javascript:void(0)'}"><i class="iconfont iconfont-whatapp1"></i></a>
+        <a class="share-btn flex-i flex-ac flex-jc" href="{$config.whatsapp?'https://wa.me/'.$config.whatsapp:'javascript:void(0)'}"><i class="iconfont iconfont-whatapp1"></i></a>
         <a class="share-btn flex-i flex-ac flex-jc" href="{$config.instagram|default='javascript:void(0)'}"><i class="iconfont iconfont-instagram-line"></i></a>
         <a class="share-btn flex-i flex-ac flex-jc" href="{$config.youtube|default='javascript:void(0)'}"><i class="iconfont iconfont-youtube"></i></a>
     </div>
@@ -217,7 +217,7 @@ default:$menuLang = ['menu'=>'Menu', 'search'=>'Search', 'language'=>'Language',
             <ul class="grid-box">
                 <li class="column"><a href="{$config.facebook|default='javascript:void(0)'}"><i class="iconfont iconfont-facebook"></i></a></li>
                 <li class="column"><a href="{$config.twitter|default='javascript:void(0)'}"><i class="iconfont iconfont-tuite"></i></a></li>
-                <li class="column"><a href="{$config.whatsapp|default='javascript:void(0)'}"><i class="iconfont iconfont-whatapp1"></i></a></li>
+                <li class="column"><a href="{$config.whatsapp?'https://wa.me/'.$config.whatsapp:'javascript:void(0)'}"><i class="iconfont iconfont-whatapp1"></i></a></li>
                 <li class="column"><a href="{$config.instagram|default='javascript:void(0)'}"><i class="iconfont iconfont-instagram-line"></i></a></li>
                 <li class="column"><a href="{$config.youtube|default='javascript:void(0)'}"><i class="iconfont iconfont-youtube"></i></a></li>
             </ul>
