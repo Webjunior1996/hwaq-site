@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -737,12 +737,12 @@ $(document).ready(function () {
             }
 
             function buildDigit(finalDigit, rounds) {
-                var html = '<span class="hwaq-num-cell" data-final="' + finalDigit + '"><span class="hwaq-num-strip">';
+                var html = '<data class="hwaq-num-cell" data-final="' + finalDigit + '"><data class="hwaq-num-strip">';
                 var total = rounds * 10 + parseInt(finalDigit, 10);
                 for (var i = 0; i <= total; i++) {
-                    html += '<span>' + (i % 10) + '</span>';
+                    html += '<data class="block">' + (i % 10) + '</data>';
                 }
-                return html + '</span></span>';
+                return html + '</data></data>';
             }
 
             function requestFrame(callback) {
@@ -777,7 +777,7 @@ $(document).ready(function () {
                 obj.find('em').each(function (emIndex) {
                     var em = $(this);
                     var text = getFinalText(em);
-                    var html = '';
+                    var html = '<data class="hwaq-num-roll" aria-label="'+text+'">';
                     for (var i = 0; i < text.length; i++) {
                         var char = text.charAt(i);
                         if (/\d/.test(char)) {
@@ -786,7 +786,9 @@ $(document).ready(function () {
                             html += '<span class="hwaq-num-static">' + escapeHtml(char) + '</span>';
                         }
                     }
-                    em.addClass('hwaq-num-roll').attr('aria-label', text).html(html);
+                    html += '</data>'
+                    // roll.addClass('hwaq-num-roll').attr('aria-label', text).html(html);
+                    em.html(html);
                     em.find('.hwaq-num-cell').each(function (index) {
                         animateDigit(this, index);
                     });
