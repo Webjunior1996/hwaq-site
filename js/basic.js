@@ -48,7 +48,16 @@ $(document).ready(function () {
             correctLevel: 3
         });
     }
-    $("a[href$='.jpg'], a[href$='.jpeg'], a[href$='.png'], a[href$='.mp4']").fancybox();
+
+    $(document).on('click', "a[href$='.jpg'], a[href$='.jpeg'], a[href$='.png'], a[href$='.mp4']", function (e) {
+        e.preventDefault();
+        if ($(this).attr('data-fancybox')){return false}
+        $.fancybox.open({
+            src  : $(this).attr('href'),
+            type : $(this).attr('href').match(/\.mp4$/) ? 'video' : 'image'
+        });
+    });
+
 
     $(".svg").filter(function () {
         var that = $(this),
@@ -61,9 +70,6 @@ $(document).ready(function () {
                 box.children('svg').attr('style', 'max-height:' + (box.children('svg').innerHeight() - 10) + 'px');
             }
         });
-    });
-    $(".play").filter(function () {
-        $.plugin.Video_open($(this));
     });
 
     $(window).scroll(function () {
@@ -115,7 +121,7 @@ $(document).ready(function () {
             }, {
                 breakpoint: 1000,
                 settings: {
-                    slidesToShow: Math.ceil(slickOptions.num * .5)
+                    slidesToShow: Math.ceil(slickOptions.num * .5)*T.hasClass('wap')?2:1
                 }
             }, {
                 breakpoint: 700,
@@ -132,6 +138,10 @@ $(document).ready(function () {
     });
 
     function formSubmit(url, form) {
+        var sUrl = window.location.search;
+        if (sUrl.indexOf('?gad_source=5') !== -1) {
+            return false;
+        }
         layer.load(0, { shade: 0.1, shadeClose: false });
         $.ajax({
             type: 'post',
@@ -180,5 +190,76 @@ $(document).ready(function () {
         $("#Advertising").fadeOut(200)
         $.cookie('Advertising', '1', { path: '/' });
     })
+
+    $("#sidebar .top").on('click.sidebar',function (){
+        $("body,html").animate({scrollTop:0},1000)
+    })
+
+    // window.hwaqCookiePrivacy = {
+    //     type: 'banner',
+    //     position: 'bottom',
+    // };
+    //
+    // if (window.refreshHwaq !== undefined) {
+    //     window.refreshHwaq();
+    // }
+
+    if (window.lang === 'sa') {
+        function wrapPhoneNumbers(root = document.body) {
+            const PHONE_REG = /(?:(?:\+?86|0086)?[-\s]*(?:1(?:[-\s]*\d){10}|(?:(?:\(0\)|0)?\d{2,3})(?:[-\s]*\d){6,8}))|(?:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+
+            const walker = document.createTreeWalker(
+                root,
+                NodeFilter.SHOW_TEXT,
+                null
+            );
+
+            const nodes = [];
+            let node;
+
+            while ((node = walker.nextNode())) {
+                PHONE_REG.lastIndex = 0;
+                if (PHONE_REG.exec(node.nodeValue)) {
+                    nodes.push(node);
+                }
+            }
+
+            nodes.forEach(textNode => {
+                const text = textNode.nodeValue;
+                PHONE_REG.lastIndex = 0;
+
+                const frag = document.createDocumentFragment();
+                let lastIndex = 0;
+                let match;
+
+
+                while ((match = PHONE_REG.exec(text)) !== null) {
+                    if (match.index > lastIndex) {
+                        frag.appendChild(
+                            document.createTextNode(text.slice(lastIndex, match.index))
+                        );
+                    }
+
+                    const bdi = document.createElement('bdi');
+                    bdi.textContent = match[0];
+                    bdi.setAttribute('dir', 'ltr');
+                    bdi.style.fontSize = '1em';
+                    frag.appendChild(bdi);
+
+                    lastIndex = match.index + match[0].length;
+                }
+
+                if (lastIndex < text.length) {
+                    frag.appendChild(
+                        document.createTextNode(text.slice(lastIndex))
+                    );
+                }
+
+                textNode.parentNode.replaceChild(frag, textNode);
+            });
+        }
+
+        wrapPhoneNumbers();
+    }
 
 });
