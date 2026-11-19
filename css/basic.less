@@ -2,6 +2,1011 @@
 // 注意！！
 // 本文件为默认样式 上传之后 禁止编辑
 /******基本默认样式*******/
+:root {
+    --p16: calc(~"0.0833vw");
+    --n-p16: calc(~"var(--p16) * -1");
+    --px17: calc(~"0.15625vw + 14px");
+    --npx17: calc(~"var(--px17) * -1");
+    --px18: calc(~"0.20833vw + 14px");
+    --npx18: calc(~"var(--px18) * -1");
+    --px19: calc(~"0.26042vw + 14px");
+    --npx19: calc(~"var(--px19) * -1");
+    --px20: calc(~"0.3125vw + 14px");
+    --npx20: calc(~"var(--px20) * -1");
+    --px21: calc(~"0.3646vw + 14px");
+    --npx21: calc(~"var(--px21) * -1");
+    --px22: calc(~"0.4166vw + 14px");
+    --npx22: calc(~"var(--px22) * -1");
+    --px23: calc(~"0.46875vw + 14px");
+    --npx23: calc(~"var(--px23) * -1");
+    --px24: calc(~"0.5208vw + 14px");
+    --npx24: calc(~"var(--px24) * -1");
+    --px25: calc(~"0.5729vw + 14px");
+    --npx25: calc(~"var(--px25) * -1");
+    --px26: calc(~"0.625vw + 14px");
+    --npx26: calc(~"var(--px26) * -1");
+    --px27: calc(~"0.6771vw + 14px");
+    --npx27: calc(~"var(--px27) * -1");
+    --px28: calc(~"0.7292vw + 14px");
+    --npx28: calc(~"var(--px28) * -1");
+    --px29: calc(~"0.78125vw + 14px");
+    --npx29: calc(~"var(--px29) * -1");
+    --px30: calc(~"0.834vw + 14px");
+    --npx30: calc(~"var(--px30) * -1");
+    --px31: calc(~"0.8854vw + 14px");
+    --npx31: calc(~"var(--px31) * -1");
+    --px32: calc(~"0.9375vw + 14px");
+    --npx32: calc(~"var(--px32) * -1");
+    --px33: calc(~"0.9896vw + 14px");
+    --npx33: calc(~"var(--px33) * -1");
+    --px34: calc(~"1.0417vw + 14px");
+    --npx34: calc(~"var(--px34) * -1");
+    --px35: calc(~"1.0938vw + 14px");
+    --npx35: calc(~"var(--px35) * -1");
+    --px36: calc(~"1.1458vw + 14px");
+    --npx36: calc(~"var(--px36) * -1");
+    --px37: calc(~"1.198vw + 14px");
+    --npx37: calc(~"var(--px37) * -1");
+    --px38: calc(~"1.25vw + 14px");
+    --npx38: calc(~"var(--px38) * -1");
+    --px39: calc(~"1.302vw + 14px");
+    --npx39: calc(~"var(--px39) * -1");
+    --px40: calc(~"1.354vw + 14px");
+    --npx40: calc(~"var(--px40) * -1");
+    --px41: calc(~"1.406vw + 14px");
+    --npx41: calc(~"var(--px41) * -1");
+    --px42: calc(~"1.458vw + 14px");
+    --npx42: calc(~"var(--px42) * -1");
+    --px43: calc(~"1.5104vw + 14px");
+    --npx43: calc(~"var(--px43) * -1");
+    --px44: calc(~"1.5625vw + 14px");
+    --npx44: calc(~"var(--px44) * -1");
+    --px45: calc(~"1.615vw + 14px");
+    --npx45: calc(~"var(--px45) * -1");
+    --px46: calc(~"1.667vw + 14px");
+    --npx46: calc(~"var(--px46) * -1");
+    --px47: calc(~"1.719vw + 14px");
+    --npx47: calc(~"var(--px47) * -1");
+    --px48: calc(~"1.7708vw + 14px");
+    --npx48: calc(~"var(--px48) * -1");
+    --px49: calc(~"1.823vw + 14px");
+    --npx49: calc(~"var(--px49) * -1");
+    --px50: calc(~"1.875vw + 14px");
+    --npx50: calc(~"var(--px50) * -1");
+    --px51: calc(~"1.927vw + 14px");
+    --npx51: calc(~"var(--px51) * -1");
+    --px52: calc(~"1.979vw + 14px");
+    --npx52: calc(~"var(--px52) * -1");
+    --px53: calc(~"2.03125vw + 14px");
+    --npx53: calc(~"var(--px53) * -1");
+    --px54: calc(~"2.0833vw + 14px");
+    --npx54: calc(~"var(--px54) * -1");
+    --px55: calc(~"2.1354vw + 14px");
+    --npx55: calc(~"var(--px55) * -1");
+    --px56: calc(~"2.1875vw + 14px");
+    --npx56: calc(~"var(--px56) * -1");
+    --px57: calc(~"2.2396vw + 14px");
+    --npx57: calc(~"var(--px57) * -1");
+    --px58: calc(~"2.2917vw + 14px");
+    --npx58: calc(~"var(--px58) * -1");
+    --px59: calc(~"2.34375vw + 14px");
+    --npx59: calc(~"var(--px59) * -1");
+    --px60: calc(~"2.3958vw + 14px");
+    --npx60: calc(~"var(--px60) * -1");
+    --px61: calc(~"2.4479vw + 14px");
+    --npx61: calc(~"var(--px61) * -1");
+    --px62: calc(~"2.5vw + 14px");
+    --npx62: calc(~"var(--px62) * -1");
+    --px63: calc(~"2.5521vw + 14px");
+    --npx63: calc(~"var(--px63) * -1");
+    --px64: calc(~"2.6042vw + 14px");
+    --npx64: calc(~"var(--px64) * -1");
+    --px65: calc(~"2.6563vw + 14px");
+    --npx65: calc(~"var(--px65) * -1");
+    --px66: calc(~"2.7083vw + 14px");
+    --npx66: calc(~"var(--px66) * -1");
+    --px67: calc(~"2.7604vw + 14px");
+    --npx67: calc(~"var(--px67) * -1");
+    --px68: calc(~"2.8125vw + 14px");
+    --npx68: calc(~"var(--px68) * -1");
+    --px69: calc(~"2.8646vw + 14px");
+    --npx69: calc(~"var(--px69) * -1");
+    --px70: calc(~"2.9167vw + 14px");
+    --npx70: calc(~"var(--px70) * -1");
+    --px71: calc(~"2.9688vw + 14px");
+    --npx71: calc(~"var(--px71) * -1");
+    --px72: calc(~"3.0208vw + 14px");
+    --npx72: calc(~"var(--px72) * -1");
+    --px73: calc(~"3.0729vw + 14px");
+    --npx73: calc(~"var(--px73) * -1");
+    --px74: calc(~"3.125vw + 14px");
+    --npx74: calc(~"var(--px74) * -1");
+    --px75: calc(~"3.1771vw + 14px");
+    --npx75: calc(~"var(--px75) * -1");
+    --px76: calc(~"3.2292vw + 14px");
+    --npx76: calc(~"var(--px76) * -1");
+    --px77: calc(~"3.2812vw + 14px");
+    --npx77: calc(~"var(--px77) * -1");
+    --px78: calc(~"3.3333vw + 14px");
+    --npx78: calc(~"var(--px78) * -1");
+    --px79: calc(~"3.3854vw + 14px");
+    --npx79: calc(~"var(--px79) * -1");
+    --px80: calc(~"3.4375vw + 14px");
+    --npx80: calc(~"var(--px80) * -1");
+    --px81: calc(~"3.4896vw + 14px");
+    --npx81: calc(~"var(--px81) * -1");
+    --px82: calc(~"3.5417vw + 14px");
+    --npx82: calc(~"var(--px82) * -1");
+    --px83: calc(~"3.59375vw + 14px");
+    --npx83: calc(~"var(--px83) * -1");
+    --px84: calc(~"3.6458vw + 14px");
+    --npx84: calc(~"var(--px84) * -1");
+    --px85: calc(~"3.6979vw + 14px");
+    --npx85: calc(~"var(--px85) * -1");
+    --px86: calc(~"3.75vw + 14px");
+    --npx86: calc(~"var(--px86) * -1");
+    --px87: calc(~"3.802vw + 14px");
+    --npx87: calc(~"var(--px87) * -1");
+    --px88: calc(~"3.854vw + 14px");
+    --npx88: calc(~"var(--px88) * -1");
+    --px89: calc(~"3.906vw + 14px");
+    --npx89: calc(~"var(--px89) * -1");
+    --px90: calc(~"3.958vw + 14px");
+    --npx90: calc(~"var(--px90) * -1");
+    --px91: calc(~"4.01vw + 14px");
+    --npx91: calc(~"var(--px91) * -1");
+    --px92: calc(~"4.0625vw + 14px");
+    --npx92: calc(~"var(--px92) * -1");
+    --px93: calc(~"4.1145vw + 14px");
+    --npx93: calc(~"var(--px93) * -1");
+    --px94: calc(~"4.1667vw + 14px");
+    --npx94: calc(~"var(--px94) * -1");
+    --px95: calc(~"4.21875vw + 14px");
+    --npx95: calc(~"var(--px95) * -1");
+    --px96: calc(~"4.2708vw + 14px");
+    --npx96: calc(~"var(--px96) * -1");
+    --px97: calc(~"4.3229vw + 14px");
+    --npx97: calc(~"var(--px97) * -1");
+    --px98: calc(~"4.375vw + 14px");
+    --npx98: calc(~"var(--px98) * -1");
+    --px99: calc(~"4.427vw + 14px");
+    --npx99: calc(~"var(--px99) * -1");
+    --px100: calc(~"4.479vw + 14px");
+    --npx100: calc(~"var(--px100) * -1");
+    --px101: calc(~"4.53125vw + 14px");
+    --npx101: calc(~"var(--px101) * -1");
+    --px102: calc(~"4.5833vw + 14px");
+    --npx102: calc(~"var(--px102) * -1");
+    --px103: calc(~"4.6354vw + 14px");
+    --npx103: calc(~"var(--px103) * -1");
+    --px104: calc(~"4.6875vw + 14px");
+    --npx104: calc(~"var(--px104) * -1");
+    --px105: calc(~"4.7396vw + 14px");
+    --npx105: calc(~"var(--px105) * -1");
+    --px106: calc(~"4.7917vw + 14px");
+    --npx106: calc(~"var(--px106) * -1");
+    --px107: calc(~"4.84375vw + 14px");
+    --npx107: calc(~"var(--px107) * -1");
+    --px108: calc(~"4.8958vw + 14px");
+    --npx108: calc(~"var(--px108) * -1");
+    --px109: calc(~"4.9479vw + 14px");
+    --npx109: calc(~"var(--px109) * -1");
+    --px110: calc(~"5vw + 14px");
+    --npx110: calc(~"var(--px110) * -1");
+    --px111: calc(~"5.0508vw + 14px");
+    --npx111: calc(~"var(--px111) * -1");
+    --px112: calc(~"5.1042vw + 14px");
+    --npx112: calc(~"var(--px112) * -1");
+    --px113: calc(~"5.15625vw + 14px");
+    --npx113: calc(~"var(--px113) * -1");
+    --px114: calc(~"5.2083vw + 14px");
+    --npx114: calc(~"var(--px114) * -1");
+    --px115: calc(~"5.2604vw + 14px");
+    --npx115: calc(~"var(--px115) * -1");
+    --px116: calc(~"5.3125vw + 14px");
+    --npx116: calc(~"var(--px116) * -1");
+    --px117: calc(~"5.3646vw + 14px");
+    --npx117: calc(~"var(--px117) * -1");
+    --px118: calc(~"5.4167vw + 14px");
+    --npx118: calc(~"var(--px118) * -1");
+    --px119: calc(~"5.46875vw + 14px");
+    --npx119: calc(~"var(--px119) * -1");
+    --px120: calc(~"5.5208vw + 14px");
+    --npx120: calc(~"var(--px120) * -1");
+    --px121: calc(~"5.5729vw + 14px");
+    --npx121: calc(~"var(--px121) * -1");
+    --px122: calc(~"5.625vw + 14px");
+    --npx122: calc(~"var(--px122) * -1");
+    --px123: calc(~"5.6771vw + 14px");
+    --npx123: calc(~"var(--px123) * -1");
+    --px124: calc(~"5.7292vw + 14px");
+    --npx124: calc(~"var(--px124) * -1");
+    --px125: calc(~"5.78125vw + 14px");
+    --npx125: calc(~"var(--px125) * -1");
+    --px126: calc(~"5.8333vw + 14px");
+    --npx126: calc(~"var(--px126) * -1");
+    --px127: calc(~"5.8854vw + 14px");
+    --npx127: calc(~"var(--px127) * -1");
+    --px128: calc(~"5.9375vw + 14px");
+    --npx128: calc(~"var(--px128) * -1");
+    --px129: calc(~"5.9896vw + 14px");
+    --npx129: calc(~"var(--px129) * -1");
+    --px130: calc(~"6.0416vw + 14px");
+    --npx130: calc(~"var(--px130) * -1");
+    --px131: calc(~"6.09375vw + 14px");
+    --npx131: calc(~"var(--px131) * -1");
+    --px132: calc(~"6.1458vw + 14px");
+    --npx132: calc(~"var(--px132) * -1");
+    --px133: calc(~"6.1979vw + 14px");
+    --npx133: calc(~"var(--px133) * -1");
+    --px134: calc(~"6.25vw + 14px");
+    --npx134: calc(~"var(--px134) * -1");
+    --px135: calc(~"6.3021vw + 14px");
+    --npx135: calc(~"var(--px135) * -1");
+    --px136: calc(~"6.3541vw + 14px");
+    --npx136: calc(~"var(--px136) * -1");
+    --px137: calc(~"6.40625vw + 14px");
+    --npx137: calc(~"var(--px137) * -1");
+    --px138: calc(~"6.4583vw + 14px");
+    --npx138: calc(~"var(--px138) * -1");
+    --px139: calc(~"6.5104vw + 14px");
+    --npx139: calc(~"var(--px139) * -1");
+    --px140: calc(~"6.5625vw + 14px");
+    --npx140: calc(~"var(--px140) * -1");
+    --px141: calc(~"6.6145vw + 14px");
+    --npx141: calc(~"var(--px141) * -1");
+    --px142: calc(~"6.6666vw + 14px");
+    --npx142: calc(~"var(--px142) * -1");
+    --px143: calc(~"6.71875vw + 14px");
+    --npx143: calc(~"var(--px143) * -1");
+    --px144: calc(~"6.7708vw + 14px");
+    --npx144: calc(~"var(--px144) * -1");
+    --px145: calc(~"6.8229vw + 14px");
+    --npx145: calc(~"var(--px145) * -1");
+    --px146: calc(~"6.875vw + 14px");
+    --npx146: calc(~"var(--px146) * -1");
+    --px147: calc(~"6.927vw + 14px");
+    --npx147: calc(~"var(--px147) * -1");
+    --px148: calc(~"6.979vw + 14px");
+    --npx148: calc(~"var(--px148) * -1");
+    --px149: calc(~"7.03125vw + 14px");
+    --npx149: calc(~"var(--px149) * -1");
+    --px150: calc(~"7.0833vw + 14px");
+    --npx150: calc(~"var(--px150) * -1");
+    --px151: calc(~"7.1354vw + 14px");
+    --npx151: calc(~"var(--px151) * -1");
+    --px152: calc(~"7.1875vw + 14px");
+    --npx152: calc(~"var(--px152) * -1");
+    --px153: calc(~"7.2395vw + 14px");
+    --npx153: calc(~"var(--px153) * -1");
+    --px154: calc(~"7.2916vw + 14px");
+    --npx154: calc(~"var(--px154) * -1");
+    --px155: calc(~"7.34375vw + 14px");
+    --npx155: calc(~"var(--px155) * -1");
+    --px156: calc(~"7.3958vw + 14px");
+    --npx156: calc(~"var(--px156) * -1");
+    --px157: calc(~"7.4479vw + 14px");
+    --npx157: calc(~"var(--px157) * -1");
+    --px158: calc(~"7.5vw + 14px");
+    --npx158: calc(~"var(--px158) * -1");
+    --px159: calc(~"7.5521vw + 14px");
+    --npx159: calc(~"var(--px159) * -1");
+    --px160: calc(~"7.6042vw + 14px");
+    --npx160: calc(~"var(--px160) * -1");
+    --px161: calc(~"7.65625vw + 14px");
+    --npx161: calc(~"var(--px161) * -1");
+    --px162: calc(~"7.7083vw + 14px");
+    --npx162: calc(~"var(--px162) * -1");
+    --px163: calc(~"7.7604vw + 14px");
+    --npx163: calc(~"var(--px163) * -1");
+    --px164: calc(~"7.8125vw + 14px");
+    --npx164: calc(~"var(--px164) * -1");
+    --px165: calc(~"7.8645vw + 14px");
+    --npx165: calc(~"var(--px165) * -1");
+    --px166: calc(~"7.9166vw + 14px");
+    --npx166: calc(~"var(--px166) * -1");
+    --px167: calc(~"7.96875vw + 14px");
+    --npx167: calc(~"var(--px167) * -1");
+    --px168: calc(~"8.0208vw + 14px");
+    --npx168: calc(~"var(--px168) * -1");
+    --px169: calc(~"8.0729vw + 14px");
+    --npx169: calc(~"var(--px169) * -1");
+    --px170: calc(~"8.125vw + 14px");
+    --npx170: calc(~"var(--px170) * -1");
+    --px171: calc(~"8.177vw + 14px");
+    --npx171: calc(~"var(--px171) * -1");
+    --px172: calc(~"8.2291vw + 14px");
+    --npx172: calc(~"var(--px172) * -1");
+    --px173: calc(~"8.28125vw + 14px");
+    --npx173: calc(~"var(--px173) * -1");
+    --px174: calc(~"8.3333vw + 14px");
+    --npx174: calc(~"var(--px174) * -1");
+    --px175: calc(~"8.3854vw + 14px");
+    --npx175: calc(~"var(--px175) * -1");
+    --px176: calc(~"8.4375vw + 14px");
+    --npx176: calc(~"var(--px176) * -1");
+    --px177: calc(~"8.4895vw + 14px");
+    --npx177: calc(~"var(--px177) * -1");
+    --px178: calc(~"8.5416vw + 14px");
+    --npx178: calc(~"var(--px178) * -1");
+    --px179: calc(~"8.59375vw + 14px");
+    --npx179: calc(~"var(--px179) * -1");
+    --px180: calc(~"8.6458vw + 14px");
+    --npx180: calc(~"var(--px180) * -1");
+    --px181: calc(~"8.6979vw + 14px");
+    --npx181: calc(~"var(--px181) * -1");
+    --px182: calc(~"8.75vw + 14px");
+    --npx182: calc(~"var(--px182) * -1");
+    --px183: calc(~"8.802vw + 14px");
+    --npx183: calc(~"var(--px183) * -1");
+    --px184: calc(~"8.8541vw + 14px");
+    --npx184: calc(~"var(--px184) * -1");
+    --px185: calc(~"8.90625vw + 14px");
+    --npx185: calc(~"var(--px185) * -1");
+    --px186: calc(~"8.9583vw + 14px");
+    --npx186: calc(~"var(--px186) * -1");
+    --px187: calc(~"9.0104vw + 14px");
+    --npx187: calc(~"var(--px187) * -1");
+    --px188: calc(~"9.0625vw + 14px");
+    --npx188: calc(~"var(--px188) * -1");
+    --px189: calc(~"9.1145vw + 14px");
+    --npx189: calc(~"var(--px189) * -1");
+    --px190: calc(~"9.1666vw + 14px");
+    --npx190: calc(~"var(--px190) * -1");
+    --px191: calc(~"9.21875vw + 14px");
+    --npx191: calc(~"var(--px191) * -1");
+    --px192: calc(~"9.2708vw + 14px");
+    --npx192: calc(~"var(--px192) * -1");
+    --px193: calc(~"9.3229vw + 14px");
+    --npx193: calc(~"var(--px193) * -1");
+    --px194: calc(~"9.375vw + 14px");
+    --npx194: calc(~"var(--px194) * -1");
+    --px195: calc(~"9.427vw + 14px");
+    --npx195: calc(~"var(--px195) * -1");
+    --px196: calc(~"9.4791vw + 14px");
+    --npx196: calc(~"var(--px196) * -1");
+    --px197: calc(~"9.53125vw + 14px");
+    --npx197: calc(~"var(--px197) * -1");
+    --px198: calc(~"9.5833vw + 14px");
+    --npx198: calc(~"var(--px198) * -1");
+    --px199: calc(~"9.6354vw + 14px");
+    --npx199: calc(~"var(--px199) * -1");
+    --px200: calc(~"9.6875vw + 14px");
+    --npx200: calc(~"var(--px200) * -1");
+}
+
+.op-0 {
+    opacity: 0;
+}
+
+.op-01 {
+    opacity: 0.01;
+}
+
+.op-02 {
+    opacity: 0.02;
+}
+
+.op-03 {
+    opacity: 0.03;
+}
+
+.op-04 {
+    opacity: 0.04;
+}
+
+.op-05 {
+    opacity: 0.05;
+}
+
+.op-06 {
+    opacity: 0.06;
+}
+
+.op-07 {
+    opacity: 0.07;
+}
+
+.op-08 {
+    opacity: 0.08;
+}
+
+.op-09 {
+    opacity: 0.09;
+}
+
+.op-1 {
+    opacity: 0.1;
+}
+
+.op-11 {
+    opacity: 0.11;
+}
+
+.op-12 {
+    opacity: 0.12;
+}
+
+.op-13 {
+    opacity: 0.13;
+}
+
+.op-14 {
+    opacity: 0.14;
+}
+
+.op-15 {
+    opacity: 0.15;
+}
+
+.op-16 {
+    opacity: 0.16;
+}
+
+.op-17 {
+    opacity: 0.17;
+}
+
+.op-18 {
+    opacity: 0.18;
+}
+
+.op-19 {
+    opacity: 0.19;
+}
+
+.op-2 {
+    opacity: 0.2;
+}
+
+.op-21 {
+    opacity: 0.21;
+}
+
+.op-22 {
+    opacity: 0.22;
+}
+
+.op-23 {
+    opacity: 0.23;
+}
+
+.op-24 {
+    opacity: 0.24;
+}
+
+.op-25 {
+    opacity: 0.25;
+}
+
+.op-26 {
+    opacity: 0.26;
+}
+
+.op-27 {
+    opacity: 0.27;
+}
+
+.op-28 {
+    opacity: 0.28;
+}
+
+.op-29 {
+    opacity: 0.29;
+}
+
+.op-3 {
+    opacity: 0.3;
+}
+
+.op-31 {
+    opacity: 0.31;
+}
+
+.op-32 {
+    opacity: 0.32;
+}
+
+.op-33 {
+    opacity: 0.33;
+}
+
+.op-34 {
+    opacity: 0.34;
+}
+
+.op-35 {
+    opacity: 0.35;
+}
+
+.op-36 {
+    opacity: 0.36;
+}
+
+.op-37 {
+    opacity: 0.37;
+}
+
+.op-38 {
+    opacity: 0.38;
+}
+
+.op-39 {
+    opacity: 0.39;
+}
+
+.op-4 {
+    opacity: 0.4;
+}
+
+.op-41 {
+    opacity: 0.41;
+}
+
+.op-42 {
+    opacity: 0.42;
+}
+
+.op-43 {
+    opacity: 0.43;
+}
+
+.op-44 {
+    opacity: 0.44;
+}
+
+.op-45 {
+    opacity: 0.45;
+}
+
+.op-46 {
+    opacity: 0.46;
+}
+
+.op-47 {
+    opacity: 0.47;
+}
+
+.op-48 {
+    opacity: 0.48;
+}
+
+.op-49 {
+    opacity: 0.49;
+}
+
+.op-5 {
+    opacity: 0.5;
+}
+
+.op-51 {
+    opacity: 0.51;
+}
+
+.op-52 {
+    opacity: 0.52;
+}
+
+.op-53 {
+    opacity: 0.53;
+}
+
+.op-54 {
+    opacity: 0.54;
+}
+
+.op-55 {
+    opacity: 0.55;
+}
+
+.op-56 {
+    opacity: 0.56;
+}
+
+.op-57 {
+    opacity: 0.57;
+}
+
+.op-58 {
+    opacity: 0.58;
+}
+
+.op-59 {
+    opacity: 0.59;
+}
+
+.op-6 {
+    opacity: 0.6;
+}
+
+.op-61 {
+    opacity: 0.61;
+}
+
+.op-62 {
+    opacity: 0.62;
+}
+
+.op-63 {
+    opacity: 0.63;
+}
+
+.op-64 {
+    opacity: 0.64;
+}
+
+.op-65 {
+    opacity: 0.65;
+}
+
+.op-66 {
+    opacity: 0.66;
+}
+
+.op-67 {
+    opacity: 0.67;
+}
+
+.op-68 {
+    opacity: 0.68;
+}
+
+.op-69 {
+    opacity: 0.69;
+}
+
+.op-7 {
+    opacity: 0.7;
+}
+
+.op-71 {
+    opacity: 0.71;
+}
+
+.op-72 {
+    opacity: 0.72;
+}
+
+.op-73 {
+    opacity: 0.73;
+}
+
+.op-74 {
+    opacity: 0.74;
+}
+
+.op-75 {
+    opacity: 0.75;
+}
+
+.op-76 {
+    opacity: 0.76;
+}
+
+.op-77 {
+    opacity: 0.77;
+}
+
+.op-78 {
+    opacity: 0.78;
+}
+
+.op-79 {
+    opacity: 0.79;
+}
+
+.op-8 {
+    opacity: 0.8;
+}
+
+.op-81 {
+    opacity: 0.81;
+}
+
+.op-82 {
+    opacity: 0.82;
+}
+
+.op-83 {
+    opacity: 0.83;
+}
+
+.op-84 {
+    opacity: 0.84;
+}
+
+.op-85 {
+    opacity: 0.85;
+}
+
+.op-86 {
+    opacity: 0.86;
+}
+
+.op-87 {
+    opacity: 0.87;
+}
+
+.op-88 {
+    opacity: 0.88;
+}
+
+.op-89 {
+    opacity: 0.89;
+}
+
+.op-9 {
+    opacity: 0.9;
+}
+
+.op-91 {
+    opacity: 0.91;
+}
+
+.op-92 {
+    opacity: 0.92;
+}
+
+.op-93 {
+    opacity: 0.93;
+}
+
+.op-94 {
+    opacity: 0.94;
+}
+
+.op-95 {
+    opacity: 0.95;
+}
+
+.op-96 {
+    opacity: 0.96;
+}
+
+.op-97 {
+    opacity: 0.97;
+}
+
+.op-98 {
+    opacity: 0.98;
+}
+
+.op-99 {
+    opacity: 0.99;
+}
+
+.op-1 {
+    opacity: 1;
+}
+
+.lh1 {
+    line-height: 1;
+}
+
+.lh1-1 {
+    line-height: 1.1;
+}
+
+.lh1-2 {
+    line-height: 1.2;
+}
+
+.lh1-3 {
+    line-height: 1.3;
+}
+
+.lh1-4 {
+    line-height: 1.4;
+}
+
+.lh1-5 {
+    line-height: 1.5;
+}
+
+.lh1-6 {
+    line-height: 1.6;
+}
+
+.lh1-7 {
+    line-height: 1.7;
+}
+
+.lh1-8 {
+    line-height: 1.8;
+}
+
+.lh-9 {
+    line-height: 1.9;
+}
+
+.lh2 {
+    line-height: 2;
+}
+
+.lh2-1 {
+    line-height: 2.1;
+}
+
+.lh2-2 {
+    line-height: 2.2;
+}
+
+.lh2-3 {
+    line-height: 2.3;
+}
+
+.lh2-4 {
+    line-height: 2.4;
+}
+
+.lh2-5 {
+    line-height: 2.5;
+}
+
+.lh2-6 {
+    line-height: 2.6;
+}
+
+.lh2-7 {
+    line-height: 2.7;
+}
+
+.lh2-8 {
+    line-height: 2.8;
+}
+
+.lh2-9 {
+    line-height: 2.9;
+}
+
+.lh3 {
+    line-height: 3;
+}
+.letter-0 {
+    letter-spacing: 0px;
+}
+
+.letter-1 {
+    letter-spacing: 1px;
+}
+
+.letter-2 {
+    letter-spacing: 2px;
+}
+
+.letter-3 {
+    letter-spacing: 3px;
+}
+
+.letter-4 {
+    letter-spacing: 4px;
+}
+
+.letter-5 {
+    letter-spacing: 5px;
+}
+
+.letter-6 {
+    letter-spacing: 6px;
+}
+
+.letter-7 {
+    letter-spacing: 7px;
+}
+
+.letter-8 {
+    letter-spacing: 8px;
+}
+
+.letter-9 {
+    letter-spacing: 9px;
+}
+
+.letter-10 {
+    letter-spacing: 10px;
+}
+
+@media screen and (max-width: 1250px) {
+    .letter-1 {
+        letter-spacing: 0;
+    }
+
+    .letter-2 {
+        letter-spacing: 0;
+    }
+
+    .letter-3 {
+        letter-spacing: 0;
+    }
+
+    .letter-4 {
+        letter-spacing: 1px;
+    }
+
+    .letter-5 {
+        letter-spacing: 2px;
+    }
+
+    .letter-6 {
+        letter-spacing: 3px;
+    }
+
+    .letter-7 {
+        letter-spacing: 4px;
+    }
+
+    .letter-8 {
+        letter-spacing: 5px;
+    }
+
+    .letter-9 {
+        letter-spacing: 6px;
+    }
+
+    .letter-10 {
+        letter-spacing: 7px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .letter-4 {
+        letter-spacing: 0;
+    }
+
+    .letter-5 {
+        letter-spacing: 0;
+    }
+
+    .letter-6 {
+        letter-spacing: 0;
+    }
+
+    .letter-7 {
+        letter-spacing: 1px;
+    }
+
+    .letter-8 {
+        letter-spacing: 2px;
+    }
+
+    .letter-9 {
+        letter-spacing: 3px;
+    }
+
+    .letter-10 {
+        letter-spacing: 4px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .letter-7 {
+        letter-spacing: 0;
+    }
+
+    .letter-8 {
+        letter-spacing: 0;
+    }
+
+    .letter-9 {
+        letter-spacing: 1px;
+    }
+
+    .letter-10 {
+        letter-spacing: 2px;
+    }
+}
+html[lang="sa"] input[name="phone"],
+html[lang="sa"] input[name="mail"] {
+    direction: ltr;
+    unicode-bidi: bidi-override;
+    text-align: right;
+}
+
+html[lang="sa"] input[name="phone"]::placeholder,
+html[lang="sa"] input[name="mail"]::placeholder {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
 body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, li, pre, form, fieldset, legend, button, input, textarea, th, td, ol {
     margin: 0;
     padding: 0;
@@ -283,47 +1288,65 @@ hr {
 body {
     background: transparent;
 }
-.op-0 {
-    opacity: 0;
+//.op-0 {
+//    opacity: 0;
+//}
+//.op-1 {
+//    opacity: 0.1;
+//}
+//.op-2 {
+//    opacity: 0.2;
+//}
+//.op-3 {
+//    opacity: 0.3;
+//}
+//.op-4 {
+//    opacity: 0.4;
+//}
+//.op-5 {
+//    opacity: 0.5;
+//}
+//.op-6 {
+//    opacity: 0.6;
+//}
+//.op-7 {
+//    opacity: 0.7;
+//}
+//.op-8 {
+//    opacity: 0.8;
+//}
+//.op-9 {
+//    opacity: 0.9;
+//}
+//.op-10 {
+//    opacity: 1;
+//}
+.font-thin,.fw-100 {
+    font-weight: 100;
 }
-.op-1 {
-    opacity: 0.1;
+.font-extra,.fw-200 {
+    font-weight: 200;
 }
-.op-2 {
-    opacity: 0.2;
-}
-.op-3 {
-    opacity: 0.3;
-}
-.op-4 {
-    opacity: 0.4;
-}
-.op-5 {
-    opacity: 0.5;
-}
-.op-6 {
-    opacity: 0.6;
-}
-.op-7 {
-    opacity: 0.7;
-}
-.op-8 {
-    opacity: 0.8;
-}
-.op-9 {
-    opacity: 0.9;
-}
-.op-10 {
-    opacity: 1;
-}
-.font-light {
+.font-light,.fw-300 {
     font-weight: lighter;
 }
-.font-normal {
+.font-normal,.fw-400 {
     font-weight: normal;
 }
-.font-bold {
+.font-medium,.fw-500 {
+    font-weight: 500;
+}
+.font-semi,.fw-600 {
+    font-weight: 600;
+}
+.font-bold,.fw-700 {
     font-weight: bold;
+}
+.font-ultra,.fw-800 {
+    font-weight: 800;
+}
+.font-black,.fw-900 {
+    font-weight: 900;
 }
 .block {
     display: block;
@@ -354,6 +1377,9 @@ body {
 }
 .flex-drr {
     flex-direction: row-reverse;
+}
+.flex-dcr {
+    flex-direction: column-reverse;
 }
 .flex-as {
     align-items: flex-start;
@@ -451,7 +1477,6 @@ body {
 }
 @media screen and (max-width: 500px){
     .gridColumns(1, 12,.1);
-
 }
 
 /* 边距预设 */
@@ -534,6 +1559,12 @@ body {
 }
 .width(0, 100);
 
+/* 其它样式 */
+.sticky {
+    position: sticky;
+    top: 120px;
+}
+
 /* 响应式上的处理 */
 @media screen and (max-width: 1700px){
     .generate(0, 200,0.8);
@@ -556,6 +1587,9 @@ body {
     .generate(0, 200,0.35);
     .fontSize(14, 100,0.5);
     .gap(1, 80,0.35);
+    .sticky {
+        position: static;
+    }
 }
 
 @media screen and (min-width: 1001px){
