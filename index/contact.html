@@ -1,0 +1,63 @@
+{include file="index/header"/}
+{include file="index/header-nav"/}
+<!--=====================BANNER=====================-->
+<div class="inner-banner pre">
+    <div class="ui container pl-50 pr-50 flex-ac flex">
+        <div class="bannerLine"></div>
+        <div class="pt-100 pb-20">
+            <div class="catTitle font-60">
+                {$cat_detail['cat_name']}
+            </div>
+            <div class="mbx Auxil-crumbs mt-10 flex font-16">
+                <div class="sub mr-10"></div>
+                <div class="mbxC Auxil-crumbs">
+                    {:get_link()}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=====================MAIN CONTENT=====================-->
+<div class="inner-page contact-page">
+    <div class="contact-1">
+        <div class="ui container">
+            <div class="header flex flex-w flex-jb">
+                <div class="i-title font-40 font-bold wow fadeInLeftSmall" data-wow-duration="1s">Customer Support</div>
+                <div class="con wow fadeInRightSmall" data-wow-duration="1s" data-wow-delay=".2s">
+                    We focus on mid- to high-end markets, with products that meet international standards and are mainly exported to Europe, North America, Australia, New Zealand, and other regions.</div>
+            </div>
+            <div class="main mt-30">
+                <ul class="conlist grid grid-3">
+                    <li class="column">
+                        <div class="box">
+                            <div class="main">
+                                <p class="font-21"> <em>Sales Manager :</em>Lucy</p>
+                                <p class="font-21"> <em>Phone:</em>{$config.phone}</p>
+                                <p class="font-21"> <em>Email:</em>{$config.email}</p>
+                                <div class="font-25 font-bold mt-35">Sales Department 1</div>
+                            </div>
+                            <!--<i>
+                                <img src="/guanxuanpacking/2026/04/20/logo.png" alt="{$config.cms_name}">
+                            </i>-->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="contact-2 pb-50">
+        <div class="ui container">
+            <div class="box">
+                <div class="i-title font-40 font-bold wow fadeInLeftSmall" data-wow-duration="1s">Contact Us</div>
+                <p class="font-16"> Please feel free to leave a message and we will reply to you soon.</p>
+                <div class="form wow fadeInUpSmall" data-wow-duration="1s" data-wow-delay=".2s">
+                    {forms pid='2' /}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-3">
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1VjHBD6q9X4w43jZU3KT68BMHCtLGLZQ&ehbc=2E312F&noprof=1&hl=en" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+{include file="index/footer"/}

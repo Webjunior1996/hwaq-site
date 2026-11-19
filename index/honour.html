@@ -1,0 +1,57 @@
+{include file="index/header"/}
+{include file="index/header-nav"/}
+<!--=====================INNER BANNER=====================-->
+<div class="inner-banner pre">
+    <div class="ui container pl-50 pr-50 flex-ac flex">
+        <div class="bannerLine"></div>
+        <div class="pt-100 pb-20">
+            <div class="catTitle font-60">
+                {$cat_detail['cat_name']}
+            </div>
+            <div class="mbx Auxil-crumbs mt-10 flex font-16">
+                <div class="sub mr-10"></div>
+                <div class="mbxC Auxil-crumbs">
+                    {:get_link()}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=====================MAIN CONTENT=====================-->
+<div class="innovation-page inner-page">
+    <div class="innovation-3 pt-140 pb-120">
+        <div class="ui container">
+            {php}if($cat_detail['alias']=='honour' || $cat_detail['parent_alias']=='honour'){{/php}
+            <div class="nav mb-50">
+                <ul class="flex flex-ac flex-w flexGap-20">
+                    {nav cat="honour" item="vo" child="1"}
+                    <li class="{$vo.alias|is_active} mb-20"><a>{$vo.cat_name}</a></li>
+                    {/nav}
+                </ul>
+            </div>
+            {php} } {/php}
+            <div class="box flex flex-jb flex-wap flex-drr flex-as">
+                <div class="left wid-30">
+                    <span class="h2 font-36 font-bold block" style="color: #000;">Certifications, Compliance & Process Innovation</span>
+                    <div class="text font-17 mt-35 mb-35" style="color: #000;">
+                        <p>5.With ISO 45001 certification, industry qualifications, and patent certificates, we maintain strict quality control and provide reliable eco-friendly packaging solutions.</p>
+                    </div>
+                    <a href="/product/" class="more flex-i flex-ac flex-jc font-18 radius-5">Product Recommendation</a>
+                </div>
+                <div class="right wid-65 wap-mt mt-50">
+                    {nav cat="honour" item="v1" child="1" key="vv"}
+                    <div class="factory {$vv=='0'?'':'hide'}">
+                        <dd class="grid grid-3 flexGap-45">
+                            {article cat="$v1[alias]" item="vo" limit="100" child="1" no_p="1" page_num="5"}
+                            <dl><a rel="nofollow" href="{$vo.thumb}"><img src="{$vo.thumb}" alt="{$config.cms_name}"></a></dl>
+                            {/article}
+                        </dd>
+                    </div>
+                    {/nav}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.wrapper-->
+{include file="index/footer"/}

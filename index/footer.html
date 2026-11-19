@@ -1,0 +1,99 @@
+    <!--=====================FOOTER=====================-->
+    <div id="footer" class="backImg" style="background-image: url('{$site}/images/f-bg.jpg')">
+        <div class="ui container">
+            <div class="footer-top flex flex-jb flex-ac flex-w flexGap-30 pt-70 pb-55">
+                <span class="h2 font-40 font-bold block">Contact Us Now To Start Your Project</span>
+                <a href="{$nav[5]['url']}" class="more flex-i flex-ac flex-jc font-18 radius-5 flex-s">Contact Us</a>
+            </div>
+            <hr>
+            <div class="footer-center pt-150 pb-70 flex flex-jb flex-as flexGap-20 flex-wap">
+                <div class="slide">
+                    <div class="logo"><a href="/"><img src="{$site}/images/logo.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></a></div>
+                    <div class="text font-18 mt-30 op-6">
+                        <p>Specializing in innovative R&amp;D and engineering support services for power equipment, we leverage advanced technologies to enhance power operation and maintenance, grid modernization, and grid protection.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <span class="h6 font-24 font-bold block mb-40">Quick Links</span>
+                    <div class="nav font-16">
+                        {:nav_bar()}
+                    </div>
+                </div>
+                <div class="slide">
+                    <span class="h6 font-24 font-bold block mb-40">Product Categories</span>
+                    <div class="nav font-16">
+                        <ul>
+                            {nav item="vo" cat="product" child="1"}
+                            <li><a href="{$vo.url}">{$vo.cat_name}</a></li>
+                            {/nav}
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide wap-mt mt-50">
+                    <span class="h6 font-24 font-bold block mb-40">Contact Us</span>
+                    <div class="info">
+                        <ul>
+                            <li class="flex flex-ac flexGap-18 font-18">
+                                <i class="flex-s flex-i flex-ac flex-jc"><img src="{$site}/images/icon-f-1.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <p>{$config.phone}</p>
+                            </li>
+                            <li class="flex flex-ac flexGap-18 font-18 mt-18">
+                                <i class="flex-s flex-i flex-ac flex-jc"><img src="{$site}/images/icon-f-2.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <p>{$config.email}</p>
+                            </li>
+                            <li class="flex flex-as flexGap-18 font-18 mt-18">
+                                <i class="flex-s mt-5"><img src="{$site}/images/icon-f-3.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <p>{$config.address}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom pt-25 pb-20 flex flex-ac flex-jc flexGap-20 flex-w font-18">
+                <p>Copyright &copy; {$config.cms_name}</p>
+                <p><a href="http://www.hqsmartcloud.com" rel="nofollow" target="_blank"><img src="{$site}/images/en.svg" class="svg" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></a></p>
+            </div>
+        </div>
+    </div>
+    <div id="wap-bottom">
+        <div class="flex flex-js flex-ac font-14 txt-center">
+            <div class="left flex">
+                <a href="{$nav[3]['url']}">
+                    <i class="iconfont iconfont-gongsi block"></i>
+                    {$nav[3]['cat_name']}
+                </a>
+                <a href="{$nav[2]['url']}">
+                    <i class="iconfont iconfont-news block"></i>
+                    {$nav[2]['cat_name']}
+                </a>
+            </div>
+            <div class="center">
+                <a class="msg flex flex-ac flex-jc">
+                    <i class="iconfont iconfont-duanxin"></i>
+                </a>
+            </div>
+            <div class="right flex">
+                <a href="mailto:{$config.email}">
+                    <i class="iconfont iconfont-pencil block"></i>
+                    E-mail
+                </a>
+                <a href="tel:{$config.phone}">
+                    <i class="iconfont iconfont-dianhua2 block"></i>
+                    Phone
+                </a>
+            </div>
+        </div>
+    </div>
+    {php}if (!empty($nav[1]['content'])):{/php}
+    <div id="Advertising" class="pos-center">
+        <span class="close flex flex-ac flex-jc"><i class="iconfont iconfont-close"></i></span>
+        <div class="content font-16">
+            {$nav[1]['content']}
+        </div>
+    </div>
+    {php}endif;{/php}
+</div>
+</body>
+
+</html>

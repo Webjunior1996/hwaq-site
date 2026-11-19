@@ -1,0 +1,68 @@
+{include file="index/header"/}
+{include file="index/header-nav"/}
+<!--=====================INNER BANNER=====================-->
+<div class="inner-banner pre">
+    <div class="ui container pl-50 pr-50 flex-ac flex">
+        <div class="bannerLine"></div>
+        <div class="pt-100 pb-20">
+            <div class="catTitle font-60">
+                {$cat_detail['cat_name']}
+            </div>
+            <div class="mbx Auxil-crumbs mt-10 flex font-16">
+                <div class="sub mr-10"></div>
+                <div class="mbxC Auxil-crumbs">
+                    {:get_link()}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=====================MAIN CONTENT=====================-->
+<div class="inner-page newsdet-page pt-80 pb-80">
+    <div class="init-1">
+        {articlefind item="v2"}
+        <div class="ui container">
+            <h1 class="Auxil-h1 font-40 font-bold txt-center">{$v2['title']}</h1>
+            <time class="font-18 block txt-center mt-10 mb-30">{$v2['add_time|date='Y-m-d',###']}</time>
+            <div class="content font-18 mb-60">
+                {$v2['content']}
+            </div>
+        </div>
+        {/articlefind}
+    </div>
+    <div class="news_next Auxil-through font-18">
+        <div class="ui container">
+            {next item="v3"}<a href="{$v3['url']|default=''}">PREV：{$v3['title']|default="No previous article"}</a>{/next}
+            <br />
+            {before item="v4"}<a href="{$v4['url']|default=''}">NEXT：{$v4['title']|default="No next article"}</a>{/before}
+        </div>
+    </div>
+    <div class="prodet-page">
+        <div class="prodet-4 Auxil-related pt-100 pb-80">
+            <div class="ui container">
+                <div class="header flex flex_cont flex_wrap">
+                    <div class="i-title font-40 font-bold wow fadeInLeftSmall" data-wow-duration="1s">You May Also Like</div>
+                    <div class="arrow wow fadeInRightSmall" data-wow-duration="1s" data-wow-delay=".2s">
+                        <div class="prev"></div>
+                        <div class="next"></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <ul class="grid-box four animate-father" data-child="li" data-effect="fadeInUpSmall" data-delay=".2">
+                        {article cat="product" item="item" child="1" limit="5"}
+                        <li class="column">
+                            <a rel="nofollow" class="img-box block" href="{$item.url}">
+                                <img src="{$item.thumb}" alt="{$item.title}" title="{$item.title}" />
+                            </a>
+                            <div class="text">
+                                <a class="tit block" href="{$item.url}">{$item.title}</a>
+                            </div>
+                        </li>
+                        {/article}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="index/footer"/}

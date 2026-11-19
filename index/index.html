@@ -1,0 +1,247 @@
+{include file="index/header"/}
+{include file="index/header-nav"/}
+{include file="index/header-banner"/}
+
+    <!--=====================MAIN CONTENT=====================-->
+    <div id="index-body">
+        <!--=====================MAIN ADVANTAGE=====================-->
+        <div class="init-1 pre">
+            <div class="bgList pos wid-52">
+                <ul class="slick">
+                    {nav item="vo" cat="product" limit="12" child="1"}
+                    <li><a href="{$vo.url}" class="backImg block" style="background-image: url('{$vo.thumb}')"></a></li>
+                    {/nav}
+                </ul>
+            </div>
+            <div class="ui container">
+                <div class="box wid-54 pt-110 pb-60">
+                    <span class="tag font-18 up-word flex-i flex-ac mb-15">Product Categories</span>
+                    <span class="h2 font-40 font-bold block">Our Main Power Equipment Products</span>
+                    <div class="list mt-50 radius-20 pt-55 pl-55 pr-55 pb-85 flex flex-jb">
+                        <div class="left wid-65">
+                            <dl class="slick slickGap-10">
+                                {nav item="vo" cat="product" limit="12" key="k" child="1"}
+                                <dd>
+                                    <span class="h3 font-32 font-bold block"><a href="{$vo.url}">{$vo.cat_name}</a></span>
+                                    <div class="text font-18 mt-20">
+                                        {$vo.content}
+                                    </div>
+                                </dd>
+                                {/nav}
+                            </dl>
+                        </div>
+                        <div class="right flex-s flex flex-dc flex-jb ">
+                            <div class="page slickBtn flex-i flex-ac flex-jc flexGap-20">
+                                <div class="prev"><i class="iconfont iconfont-left-small"></i></div>
+                                <div class="pageNum font-40 flex-i flex-ae"><em class="font-em-15 ">1</em>/{++$k}</div>
+                                <div class="next"><i class="iconfont iconfont-right-small"></i></div>
+                            </div>
+                            <a href="{$nav[3]['url']}" class="link flex-i flex-ac flex-jc font-18 flex-dc flexGap-10"><i class="iconfont iconfont-youshangjiantou"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="init-2 txt-center pt-120 pb-120">
+            <div class="ui container">
+                <span class="tag font-18 up-word flex-i flex-ac mb-15">{$nav[3]['cat_name']}</span>
+                <span class="h2 font-40 font-bold block">Explore Our Featured Products</span>
+                <div class="list mt-70 pre">
+                    <ul class="slick four slickGap-30">
+                        {article item="vo" cat="product" like="1" limit="8" child="1" no_p="1" page_num="5"}
+                        <li>
+                            <a href="{$vo.url}" class="img-box radius-8">
+                                <img src="{$vo.thumb}" alt="{$vo.title}" width="100" height="100" loading="lazy">
+                            </a>
+                            <span class="h6 font-18 block hover-text mt-20"><a href="{$vo.url}">{$vo.title}</a></span>
+                        </li>
+                        {/article}
+                    </ul>
+                    <div class="slickBtn pos">
+                        <div class="prev"><i class="iconfont iconfont-left-small"></i></div>
+                        <div class="next"><i class="iconfont iconfont-right-small"></i></div>
+                    </div>
+                </div>
+                <div class="line mt-40 mb-40"><i></i></div>
+                <a href="{$nav[3]['url']}" class="more flex-i flex-ac flex-jc font-18 radius-5">View All Products</a>
+            </div>
+        </div>
+        <div class="init-3 pb-120">
+            <img src="{$site}/images/init-3.jpg" alt="{$config.cms_name}" width="100" height="100" loading="lazy">
+            <div class="ui container">
+                <div class="box flex flex-ac flex-jb flex-wap">
+                    <div class="left wid-50 wap-mt mt-45">
+                        <span class="tag font-18 up-word flex-i flex-ac mb-15">About Us</span>
+                        <span class="h2 font-40 font-bold block">About {$config.cms_name}</span>
+                        <div class="text font-18 mt-25 mb-50">
+                            <p>Specializing in innovative R&D and engineering support services for power equipment, we leverage advanced technologies to enhance power operation and maintenance, grid modernization, and grid protection. Our mission is to become China's leading, reliable, and innovative comprehensive power equipment service provider, ensuring the safe and stable operation of power systems.</p>
+                        </div>
+                        <a href="{$nav[4]['url']}" class="more flex-i flex-ac flex-jc font-18 full radius-5">Read More</a>
+                    </div>
+                    <div class="right wid-41 wap-mt mt-50">
+                        <ul class="grid grid-2 flexGap-24">
+                            <li class="flex-i flex-ac flex-jc flex-dc radius-10">
+                                <i><img src="{$site}/images/icon-3-1.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <span class="h6 font-60 block font-bold mt-15 mb-15">2019</span>
+                                <p class="font-18 block">Establishment Time</p>
+                            </li>
+                            <li class="flex-i flex-ac flex-jc flex-dc radius-10">
+                                <i><img src="{$site}/images/icon-3-2.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <span class="h6 font-60 block font-bold mt-15 mb-15">100+</span>
+                                <p class="font-18 block">Technical Staff</p>
+                            </li>
+                            <li class="flex-i flex-ac flex-jc flex-dc radius-10">
+                                <i><img src="{$site}/images/icon-3-3.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <span class="h6 font-60 block font-bold mt-15 mb-15">10000<sub class="font-24">m2</sub></span>
+                                <p class="font-18 block">Factory Area</p>
+                            </li>
+                            <li class="flex-i flex-ac flex-jc flex-dc radius-10">
+                                <i><img src="{$site}/images/icon-3-4.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <span class="h6 font-60 block font-bold mt-15 mb-15">100+</span>
+                                <p class="font-18 block">Customer Projects</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="init-4 pt-120 pb-120">
+            <div class="ui container">
+                <span class="tag font-18 up-word flex-i flex-ac mb-15">Advantage</span>
+                <span class="h2 font-40 font-bold block">Why Choose Us</span>
+                <div class="text font-18 mt-10">
+                    <p>Professional support for your power equipment projects</p>
+                </div>
+                <div class="list mt-70">
+                    <ul class="slick three font-28">
+                        <li>
+                            <div class="box radius-10 pt-50 pb-60 pl-50 pr-50 flexGap-25 flex flex-dc flex-js flex-as">
+                                <i class="icon flex-i flex-ac flex-jc font-40"><img src="{$site}/images/icon-4-1.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <span class="h6 font-24 font-bold block"><a href="{$nav[5]['url']}">Custom Development</a></span>
+                                <hr class="mt-0 mb-0">
+                                <div class="text font-18">
+                                    <p>Can develop and manufacture products according to customers' drawings or samples.</p>
+                                </div>
+                                <a href="{$nav[5]['url']}" class="link flex-i flex-ac font-18 flexGap-8">Read More <i class="iconfont iconfont-right-small"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box radius-10 pt-50 pb-60 pl-50 pr-50 flexGap-25 flex flex-dc flex-js flex-as">
+                                <i class="icon flex-i flex-ac flex-jc font-40"><img src="{$site}/images/icon-4-2.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <span class="h6 font-24 font-bold block"><a href="{$nav[5]['url']}">Stable Quality</a></span>
+                                <hr class="mt-0 mb-0">
+                                <div class="text font-18">
+                                    <p>Strict supplier screening & incoming material inspection. Superior production process and batch traceability. Every batch is tested for consistent quality.</p>
+                                </div>
+                                <a href="{$nav[5]['url']}" class="link flex-i flex-ac font-18 flexGap-8">Read More <i class="iconfont iconfont-right-small"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box radius-10 pt-50 pb-60 pl-50 pr-50 flexGap-25 flex flex-dc flex-js flex-as">
+                                <i class="icon flex-i flex-ac flex-jc font-40"><img src="{$site}/images/icon-4-3.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <span class="h6 font-24 font-bold block"><a href="{$nav[5]['url']}">Responsive Service</a></span>
+                                <hr class="mt-0 mb-0">
+                                <div class="text font-18">
+                                    <p>All-day follow-up service, regular customer communication & file management. Quick response to solve on-site problems.</p>
+                                </div>
+                                <a href="{$nav[5]['url']}" class="link flex-i flex-ac font-18 flexGap-8">Read More <i class="iconfont iconfont-right-small"></i></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box radius-10 pt-50 pb-60 pl-50 pr-50 flexGap-25 flex flex-dc flex-js flex-as">
+                                <i class="icon flex-i flex-ac flex-jc font-40"><img src="{$site}/images/icon-4-1.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                <span class="h6 font-24 font-bold block"><a href="{$nav[5]['url']}">Custom Development</a></span>
+                                <hr class="mt-0 mb-0">
+                                <div class="text font-18">
+                                    <p>Can develop and manufacture products according to customers' drawings or samples.</p>
+                                </div>
+                                <a href="{$nav[5]['url']}" class="link flex-i flex-ac font-18 flexGap-8">Read More <i class="iconfont iconfont-right-small"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="init-5 pt-120 pb-50 pre o-hide">
+            <div class="bg">
+                <i class="pos backImg" style="background-image: url('{$site}/images/inti-5.jpg')"></i>
+                <i class="pos backImg" style="background-image: url('{$site}/images/inti-5.jpg')"></i>
+                <i class="pos backImg" style="background-image: url('{$site}/images/inti-5.jpg')"></i>
+            </div>
+            <div class="ui container">
+                <div class="box flex flex-dc flex-jb">
+                    <span class="tag font-18 up-word flex-i flex-ac mb-15">Application</span>
+                    <span class="h2 font-40 font-bold block">Industries We Serve</span>
+                    <div class="text font-18 mt-3">
+                        <p>Diverse scenarios for power-related industries</p>
+                    </div>
+                    <div class="list txt-center pre font-20">
+                        <div class="maxw">
+                            <ul class="slick four slickGap-100 wap">
+                                <li>
+                                    <i class="icon flex-i flex-ac flex-jc font-20"><img src="{$site}/images/icon-5-1.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                    <span class="h6 font-18 mt-15 block">Power Grid Construction</span>
+                                </li>
+                                <li>
+                                    <i class="icon flex-i flex-ac flex-jc font-20"><img src="{$site}/images/icon-5-1.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                    <span class="h6 font-18 mt-15 block">Power Grid Construction</span>
+                                </li>
+                                <li>
+                                    <i class="icon flex-i flex-ac flex-jc font-20"><img src="{$site}/images/icon-5-1.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                    <span class="h6 font-18 mt-15 block">Power Grid Construction</span>
+                                </li>
+                                <li>
+                                    <i class="icon flex-i flex-ac flex-jc font-20"><img src="{$site}/images/icon-5-1.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                    <span class="h6 font-18 mt-15 block">Power Grid Construction</span>
+                                </li>
+                                <li>
+                                    <i class="icon flex-i flex-ac flex-jc font-20"><img src="{$site}/images/icon-5-1.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"></i>
+                                    <span class="h6 font-18 mt-15 block">Power Grid Construction</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slickBtn pos">
+                            <div class="prev"><i class="iconfont iconfont-left-small"></i></div>
+                            <div class="next"><i class="iconfont iconfont-right-small"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="init-6 pt-120 pb-120">
+            <div class="ui container">
+                <div class="top flex flex-ae flex-jb flex-wap flexGap-20">
+                    <div class="left">
+                        <span class="tag font-18 up-word flex-i flex-ac mb-15">{$nav[2]['cat_name']}</span>
+                        <span class="h2 font-40 font-bold block">Latest Updates</span>
+                    </div>
+                    <div class="right">
+                        <div class="nav flex-i flex-w flexGap-36 font-18">
+                            <a class="active" href="{$nav[2]['url']}">All News</a>
+                            {nav item="vo" cat="news" limit="12" child="1"}
+                            <a href="{$vo.url}">{$vo.cat_name}</a>
+                            {/nav}
+                        </div>
+                    </div>
+                </div>
+                <div class="list mt-70">
+                    <ul>
+                        {article item="vo" cat="news" order="1" by="time" limit="3" child="1" no_p="1" page_num="5"}
+                        <li class="pt-30 pb-30 pl-25 pr-25 flex flex-ac flex-jb flexGap-40 flex-wap">
+                            <div class="title wid-50">
+                                <span class="h6 font-24 font-bold text-hide-2 hover-text"><a href="{$vo.url}">{$vo.title}</a></span>
+                                <time class="font-18 block mt-15">{$vo.publish_time|date='Y-m-d',###}</time>
+                            </div>
+                            <a href="{$vo.url}" class="link flex-s flex-i flex-ac flex-jc flex-dc flexGap-10 font-18"><i class="iconfont iconfont-youshangjiantou"></i>Read More</a>
+                            <div class="text font-18 wid-50 text-hide-3 pl-30">
+                                <p>{$vo.content|nohtml|getSubstr=0,200}</p>
+                            </div>
+                        </li>
+                        {/article}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.wrapper-->
+{include file="index/footer"/}

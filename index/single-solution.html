@@ -1,0 +1,81 @@
+{include file="index/header"/}
+{include file="index/header-nav"/}
+<!--=====================INNER BANNER=====================-->
+<div class="inner-banner pre">
+    <div class="ui container pl-50 pr-50 flex-ac flex">
+        <div class="bannerLine"></div>
+        <div class="pt-100 pb-20">
+            <div class="catTitle font-60">
+                {$cat_detail['cat_name']}
+            </div>
+            <div class="mbx Auxil-crumbs mt-10 flex font-16">
+                <div class="sub mr-10"></div>
+                <div class="mbxC Auxil-crumbs">
+                    {:get_link()}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=====================MAIN CONTENT=====================-->
+<div class="inner-page casedet-page pt-100">
+    <div class="container">
+        <div class="case_cont flex flex-as">
+            <div class="case_left column">
+                <div class="widget">
+                    <form method="get" action="/product/">
+                        <input type="text" placeholder="Type here..." name="s" required="required" id="s" value="">
+                        <button type="submit"><i class="iconfont iconfont-suosou" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+                <div class="widget">
+                    <h6>{$cat_detail['cat_name']}</h6>
+                    <ul class="recent">
+                        {article item="vo" limit="6" child="1" no_p='1'}
+                        <li>
+                            <div class="thum"><img src="{$vo.thumb}" alt="{$vo.title}"> </div>
+                            <a rel="nofollow" href="{$vo.url}" class="title" style="padding-top: 0;">{$vo.title}</a>
+                        </li>
+                        {/article}
+                    </ul>
+                </div>
+            </div>
+            <div class="case_right column">
+                {articlefind item="v2"}
+                <div class="init-1">
+                    <div class="img_cont">
+                        <img src="{$v2.thumb}" alt="{$v2['title']}">
+                        <p class="text font-40"><span>{$v2['title']}</span></p>
+                    </div>
+                    <div class="text_cont font-18">
+                        {$v2['content']}
+                    </div>
+                </div>
+                {/articlefind}
+                <div class="prodet-page" style="padding: 0;">
+                    <div class="prodet-3 init-4 Auxil-related">
+                        <div class="tips font-30">
+                            <p>Recommended equipment display</p>
+                        </div>
+                        <div class="content">
+                            <ul class="grid-box three animate-father" data-child="li" data-effect="fadeInUp" data-delay=".2">
+                                {article item="vo" cat="product" order="1" by="time" limit="8" child="1" no_p="1" page_num="5"}
+                                <li class="column">
+                                    <a rel="nofollow" class="img-box block" href="{$vo.url}">
+                                        <img src="{$vo.thumb}" alt="{$vo.title}" />
+                                    </a>
+                                    <div class="text">
+                                        <a rel="nofollow" class="tit block font-24 mt-10 mb-10" href="{$vo.url}">{$vo.title}</a>
+                                        <a href="{$vo.url}" class="more flex-i flex-ac flex-jc font-18 radius-5">View More</a>
+                                    </div>
+                                </li>
+                                {/article}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="index/footer"/}

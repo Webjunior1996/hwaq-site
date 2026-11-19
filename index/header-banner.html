@@ -1,0 +1,17 @@
+    <!--=====================BANNER=====================-->
+    <div id="banner">
+        <ul class="slick one">
+            {adv pid="1" item="v" html="1"}
+            <li><img src="{$v['thumb']}" alt="{$config.cms_name}" width="100" height="100" fetchpriority="high">
+                <div class="content wow fadeIn animated" data-wow-delay="1.2s" data-wow-duration="1.5s">
+                    <div class="ui container">
+                        <div class="left txt-center">
+                            <span class="h2 font-54 font-bold block mb-50">{$v['text1']|html_entity_decode}</span>
+                            <a href="{$v.ad_link|default='/product/'}" class="more flex-i flex-ac flex-jc font-18 radius-5">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {/adv}
+        </ul>
+    </div>

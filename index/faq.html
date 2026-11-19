@@ -1,0 +1,35 @@
+{include file="index/header"/}
+{include file="index/header-nav"/}
+<!--=====================INNER BANNER=====================-->
+<div class="inner-banner pre">
+    <div class="ui container pl-50 pr-50 flex-ac flex">
+        <div class="bannerLine"></div>
+        <div class="pt-100 pb-20">
+            <div class="catTitle font-60">
+                {$cat_detail['cat_name']}
+            </div>
+            <div class="mbx Auxil-crumbs mt-10 flex font-16">
+                <div class="sub mr-10"></div>
+                <div class="mbxC Auxil-crumbs">
+                    {:get_link()}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=====================MAIN CONTENT=====================-->
+<div class="inner-page faq-page pt-100 pb-100">
+    <div class="init-1">
+        <div class="ui container">
+            {article item="vo" cat="faq" limit="12" child="1" no_p='1'}
+            <div class="list">
+                <h4 class="font-20 font-bold">Q: {$vo.title}</h4>
+                <div class="con font-16 mt-15">{$vo.content}</div>
+            </div>
+            {/article}
+            <div class="m-page pt-60 pb-60">{$pager}</div>
+        </div>
+    </div>
+</div>
+<!--/.wrapper-->
+{include file="index/footer"/}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="Keywords" content=""/>
+    <meta name="Description" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+    <!--读取IE最新渲染-->
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <!--360和QQ浏览器急速模式优先加载-->
+    <meta name="renderer" content="webkit">
+    <!--谷歌模式优先加载-->
+    <meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1, minimum-scale=1, user-scalable=no , maximum-scale=5">
+
+    <link rel="stylesheet" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.min.css"/>
+    <link rel="stylesheet" href="css/jquery.fancybox.css"/>
+<!--    <link rel="stylesheet" id="iconfont" href="//at.alicdn.com/t/c/font_378823_xw9dqaefebt.css"/>-->
+    <script>
+        (function () {
+            var newCss = '//hqcdn.hqsmartcloud.com/css/iconfont.css?'+new Date().getTime();
+
+            document.write(
+                '<link rel="stylesheet" href="' + newCss + '">'
+            );
+        })();
+    </script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/spotlight.bundle.js"></script>
+    <script type="text/javascript" src="js/qrcode.min.js"></script>
+    <script type="text/javascript" src="js/slick.js"></script>
+    <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/hwaq.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/basic.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+<div class="body-overflow-box">
+    <!--===================== HEAD =====================-->
+    <div id="header">
+        <!--===================== H-TOP =====================-->
+        <div class="h-top">
+            <div class="ui container menu">
+                <ul>
+                    <li class="active"><a href="">English</a></li>
+                    <li><a href="">España</a></li>
+                    <li><a href="">العربية</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--===================== NAVI =====================-->
+        <div class="nav">
+            <div class="ui container menu">
+                <div class="logo left floated item"><a href="/"><img src="images/logo.png" alt="{$config.cms_name}"/></a></div>
+                <div class="menu-box right floated item">
+                    <ul class="menu">
+                        <li>
+                            <a href="">Home</a>
+                        </li>
+                        <li>
+                            <a href="">PRODUCTS</a>
+                        </li>
+                        <li>
+                            <a href="">ABOUT US</a>
+                        </li>
+                        <li>
+                            <a href="">news</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="">公司新闻</a>
+                                </li>
+                                <li>
+                                    <a href="">行业新闻</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="h-search item right floated"><img src="images/icon-search-black.png" alt="{$config.cms_name}"></div>
+                <div class="search-box">
+                    <form method="get" action="/product/">
+                        <input type="text" name="s" placeholder="{$_GET['s']|default='Search...'}">
+                        <input type="submit" value="">
+                    </form>
+                    <i class="close"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    {include file="index/header-mobile" mobile="1" action="/product/" logo="logo.png" search="s" innerBanner="2" innerImg="0"/}
+    <div class="clear"></div>
+
+    <!--===================== BANNER =====================-->
+    <div id="banner">
+        <ul class="slick one">
+            <li><img src="images/banner.jpg" alt="">
+                <div class="content wow fadeIn animated" data-wow-delay="1.2s" data-wow-duration="1.5s">
+                    <div class="ui container">
+                        <div class="left">
+                            <h2 class="wow fadeInUp animated" data-wow-delay="1.4s" data-wow-duration="1.5s">our professional development
+                                <small class="wow fadeInUp animated" data-wow-delay="1.6s" data-wow-duration="1s">& manufacturing <em>screw barrel</em></small>
+                            </h2>
+                            <p class="wow fadeInUp animated" data-wow-delay="1.8s" data-wow-duration="1.5s">screw industry leader</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li><img src="images/banner.jpg" alt="">
+                <div class="content wow fadeIn animated" data-wow-delay="1.2s" data-wow-duration="1.5s">
+                    <div class="ui container">
+                        <div class="left">
+                            <h2 class="wow fadeInUp animated" data-wow-delay="1.4s" data-wow-duration="1.5s">our professional development
+                                <small class="wow fadeInUp animated" data-wow-delay="1.6s" data-wow-duration="1s">& manufacturing <em>screw barrel</em></small>
+                            </h2>
+                            <p class="wow fadeInUp animated" data-wow-delay="1.8s" data-wow-duration="1.5s">screw industry leader</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!--===================== MAIN CONTENT =====================-->
+    <div id="index-body">
+        <!--===================== MAIN ADVANTAGE =====================-->
+        <div class="i-advantage">
+            <div class="ui container">
+
+            </div>
+        </div>
+    </div>
+    <!--/.wrapper-->
+    <!--===================== FOOTER =====================-->
+    <div id="footer">
+
+        <div id="ewm" data-href="https://{php}echo isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST']{/php}"></div>
+        <a href="http://admin.hqsmartcloud.com" rel="nofollow" target="_blank">后台登录</a>
+    </div>
+    <div id="wap-bottom">
+        <div class="flex flex-js flex-ac font-14 txt-center">
+            <div class="left flex">
+                <a href="{$nav[3]['url']}">
+                    <i class="iconfont iconfont-gongsi block"></i>
+                    {$nav[3]['cat_name']}
+                </a>
+                <a href="{$nav[2]['url']}">
+                    <i class="iconfont iconfont-news block"></i>
+                    {$nav[2]['cat_name']}
+                </a>
+            </div>
+            <div class="center">
+                <a class="msg flex flex-ac flex-jc">
+                    <i class="iconfont iconfont-duanxin"></i>
+                </a>
+            </div>
+            <div class="right flex">
+                <a href="mailto:{$config.email}">
+                    <i class="iconfont iconfont-pencil block"></i>
+                    E-mail
+                </a>
+                <a href="tel:{$config.phone}">
+                    <i class="iconfont iconfont-dianhua2 block"></i>
+                    Phone
+                </a>
+            </div>
+        </div>
+    </div>
+    {php}if (!empty($nav[1]['content'])):{/php}
+    <div id="Advertising" class="pos-center">
+        <span class="close flex flex-ac flex-jc"><i class="iconfont iconfont-close"></i></span>
+        <div class="content font-16">
+            {$nav[1]['content']}
+        </div>
+    </div>
+    {php}endif;{/php}
+</div>
+</body>
+
+</html>

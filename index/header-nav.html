@@ -1,0 +1,37 @@
+<div class="body-overflow-box">
+    <!--=====================HEAD=====================-->
+    <div id="header" class="{$is_home?'':'inner'}">
+        <!--=====================NAVI=====================-->
+        <div class="nav">
+            <div class="ui container menu flex flex-ac flex-jb flexGap-40">
+                <div class="logo flex-s">
+                    <a data-fancybox="group" href="/"><img src="{$site}/images/logo.png" alt="{$config.cms_name}" width="100" height="100" loading="lazy"/></a>
+                </div>
+                <div class="menu-box right floated item font-18">
+                    {:nav_bar()}
+                </div>
+                <div class="box flex flex-ac flexGap-5 font-18 flex-s">
+                    <div class="search">
+                        <form action="/search/" class="flex-i flex-ac font-18 flexGap-5">
+                            <button type="submit"><i class="iconfont iconfont-sousuo2"></i></button>
+                            <input type="text" name="s" placeholder="{$_GET['s']|default='Search'}">
+                        </form>
+                    </div>
+                    <hr>
+                    <div class="yuy">
+                        <span class="flex-i flex-ac flexGap-5 font-18 up-word">
+                            <img src="{$site}/images/{:PRE}.jpg" alt="{$config.cms_name}" width="100" height="100" loading="lazy">
+                            {:PRE} <i class="iconfont iconfont-shanglajiantou"></i>
+                        </span>
+                        <ul>
+                            {lang key="k" item="vo"}
+                            <li><a href="{$k|get_lang_url}"><img src="{$site}/images/{$k}.jpg" alt="{$config.cms_name}" width="100" height="100" loading="lazy"> {$k}</a></li>
+                            {/lang}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {include file="index/header-mobile" mobile="0" action="/search/" logo="logo.png" search="s" innerBanner="2" innerImg="0"/}
+    <div class="clear"></div>

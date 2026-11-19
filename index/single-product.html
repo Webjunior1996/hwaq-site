@@ -1,0 +1,230 @@
+{include file="index/header"/}
+{include file="index/header-nav"/}
+<!--=====================INNER BANNER=====================-->
+<div class="inner-banner pre">
+    <div class="ui container pl-50 pr-50 flex-ac flex">
+        <div class="bannerLine"></div>
+        <div class="pt-100 pb-20">
+            <div class="catTitle font-60">
+                {$cat_detail['cat_name']}
+            </div>
+            <div class="mbx Auxil-crumbs mt-10 flex font-16">
+                <div class="sub mr-10"></div>
+                <div class="mbxC Auxil-crumbs">
+                    {:get_link()}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=====================MAIN CONTENT=====================-->
+<div class="inner-page prodet-page pt-100">
+    <div class="ui container">
+        {articlefind item="v2"}
+        <div class="prodet-1 grid-box two flex flex-w flex-2">
+            <div class="left column wow fadeInLeftSmall" data-wow-duration="1s">
+                <div class="box flex flex-as">
+                    <div class="small column">
+                        <div class="scrollbutton smallImgUp disabled prevbtn"></div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                {foreach name="$v2['images']" item="v3" key="vv"}
+                                <div class="swiper-slide">
+                                    <a rel="nofollow" class="img-box block" href="{$v3}">
+                                        <img src="{$v3}" alt="{$v2['title']}" title="{$v2['title']}"/>
+                                    </a>
+                                </div>
+                                {/foreach}
+                            </div>
+                        </div>
+                        <div class="scrollbutton smallImgDown nextbtn"></div>
+                    </div>
+                    <div class="big column">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                {foreach name="$v2['images']" item="v3" key="vv"}
+                                <div class="swiper-slide">
+                                    <a rel="nofollow" class="img-box block" href="{$v3}">
+                                        <img src="{$v3}" alt="{$v2['title']}" title="{$v2['title']}" />
+                                    </a>
+                                </div>
+                                {/foreach}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right column wow fadeInRightSmall" data-wow-duration="1s" data-wow-delay=".2s">
+                <div class="ig">
+                    <h1 class="Auxil-h1">{$v2['title']}</h1>
+                    <div class="con">{$v2['content']}</div>
+                    <div class="det7 font-18">
+                        <div class="font-22 font-bold mb-15">Product Parameters:</div>
+                        {$v2['meta']['det7']}
+                    </div>
+                    <div class="flex flex_cont">
+                        <div class="btn">
+                            <a href="/contact/" class="more flex-i flex-ac flex-jc font-18 radius-5">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="seoPublic">
+                        <div class="Auxil-through">
+                            {before item="v4"}<a class="font-16"  href="{$v4['url']|default=''}">PREV：{$v4['title']|default="No previous product"}</a>{/before}<br>
+                            {next item="v3"}<a class="font-16" href="{$v3['url']|default=''}">NEXT：{$v3['title']|default="No next product"}</a>{/next}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prodet-2">
+            <div class="i-title wow fadeInLeftSmall active" data-wow-duration="1s">Key Advantages</div>
+            <div class="i-title wow fadeInLeftSmall" data-wow-duration="1s">Product Specifications</div>
+            <div class="i-title wow fadeInLeftSmall" data-wow-duration="1s">Application Scenarios</div>
+            <div class="i-title wow fadeInLeftSmall" data-wow-duration="1s">FAQs</div>
+            <div class="i-title wow fadeInLeftSmall" data-wow-duration="1s">Usage Notes</div>
+            {php}if (!empty($v2['meta']["det1"])):{/php}
+            <div class="content content1">
+                {$v2['meta']['det2']}
+            </div>
+            {php}endif;{/php}
+            <div class="content content2">
+                {$v2['meta']['det3']}
+            </div>
+            <div class="content content3">
+                {$v2['meta']['det4']}
+            </div>
+            <div class="content content4">
+                {$v2['meta']['det5']}
+            </div>
+            <div class="content content5">
+                {$v2['meta']['det6']}
+            </div>
+        </div>
+        {/articlefind}
+        <div class="prodet-4 Auxil-related pb-80">
+            <div class="header flex flex_cont flex_wrap">
+                <div class="i-title font-40 font-bold wow fadeInLeftSmall" data-wow-duration="1s">You May Also Like</div>
+                <div class="arrow wow fadeInRightSmall" data-wow-duration="1s" data-wow-delay=".2s">
+                    <div class="prev"></div>
+                    <div class="next"></div>
+                </div>
+            </div>
+            <div class="content">
+                <ul class="grid-box four animate-father" data-child="li" data-effect="fadeInUpSmall" data-delay=".2">
+                    {article cat="product" item="item" child="1" limit="12"}
+                    <li class="column">
+                        <a rel="nofollow" class="img-box block" href="{$item.url}">
+                            <img src="{$item.thumb}" alt="{$item.title}" title="{$item.title}" />
+                        </a>
+                        <div class="text">
+                            <a class="tit block" href="{$item.url}">{$item.title}</a>
+                        </div>
+                    </li>
+                    {/article}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="seoPublic" id="index-body">
+    <div class="i-about Auxil-about pt-120 pb-120">
+        <div class="ui container">
+            <div class="flex flexGap-80 flex-wap flex-ac flex-jb">
+                <div class="left wid-57">
+                    <div class="img radius-10 o-hide mb-60 wow zoomIn animated" data-wow-delay="0.2s" data-wow-duration="1.5s">
+                        <img src="{$site}/images/about.jpg" alt="{$config.cms_name}">
+                    </div>
+                    <ul class="flex flex-jb number-Plus slickGap-20">
+                        <li class="wow fadeInLeft" data-wow-delay="0.8s" data-wow-duration="1.5s">
+                            <div class="num font-80 font-bold">
+                                <em data-num="30000">0</em><span class="font-28"> m²</span>
+                            </div>
+                            <p class="font-18 mt-13">Production Base</p>
+                        </li>
+                        <li class="wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="1.5s">
+                            <div class="num font-80 font-bold">
+                                <em data-num="10">0</em>+<span class="font-28"> Year</span>
+                            </div>
+                            <p class="font-18 mt-13"> Industry Experience</p>
+                        </li>
+                        <li class="wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="1.5s">
+                            <div class="num font-80 font-bold">
+                                <em data-num="200">0</em>+
+                            </div>
+                            <p class="font-18 mt-13">Advanced Machines</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right wid-43 wap-mt mt-40">
+                    <div class="tag">Our Story</div>
+                    <div class="i-title font-40 font-bold mt-9 mb-34 pr-40 wow fadeInUp animated" data-wow-delay="0.4s" data-wow-duration="1.5s">Eco-Friendly Packaging Solutions,<em> Professional Production,</em> and  <em>Reliable Quality.</em></div>
+                    <div class="content font-16 mb-49 wow fadeInUp animated" data-wow-delay="0.8s" data-wow-duration="1.5s">
+                        Anhui Guanxuan Environmental Protection Technology Co., Ltd., established in March 2016, is located in the heart of the Yangtze River Delta, providing convenient access to major markets and efficient logistics.
+                        <br><br>
+                        The company focuses on research, development, production, and sales of eco-friendly packaging products. Our facility includes over 200 units of advanced production equipment, covering intelligent production lines for lamination, printing, paper cups, paper bowls, plastic products, and tableware packaging. We offer high-quality, customizable packaging solutions designed to meet the diverse needs of food service and retail businesses.
+                    </div>
+                    <div class="flex flex-ac wow fadeInUp animated" data-wow-delay="0.8s" data-wow-duration="1.5s">
+                        <a href="/about/" class="more mr-23 flex-i flex-ac flex-jc font-18 radius-5">About Us</a>
+                        <div class="play pre mr-30" data-src="" data-mode="1">
+                            <img src="{$site}/images/video.png" alt="">
+                            <div class="pos pos-center"><img src="{$site}/images/play.png" alt=""></div>
+                        </div>
+                        <div class="h2 font-92 font-bold">GUANXUAN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Auxil-honor">
+        <div class="ui container">
+            <div class="title">Certificate Of Honor</div>
+            <div class="list">
+                <ul class="slick four">
+                    {article item="vo" cat="honour" limit="12" child="1" no_p="0" no_search="1" page_num="5"}
+                    <li class="column"><a rel="nofollow" data-fancybox="group" class="spotlight img-box" href="{$vo.thumb}"><img src="{$vo.thumb}" alt="{$vo.title}"></a></li>
+                    {/article}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="i-news Auxil-news pt-115 pb-120">
+        <div class="ui container">
+            <div class="top flex flex-ac flex-jb flex-w mb-50">
+                <div class="left wow fadeInLeft animated" data-wow-delay="0.4s" data-wow-duration="1.5s">
+                    <div class="tag">OUR NEWS</div>
+                    <div class="i-title font-40 font-bold mt-4">Pay Attention To Our <em>Latest News</em> and <em>Exhibitions</em></div>
+                </div>
+                <a href="/news/" class="more flex-i flex-ac flex-jc font-18 radius-5">View More</a>
+            </div>
+            <ul class="slick three slickGap-70 animate-father" data-child="li" data-effect="fadeInUp" data-delay="0.1">
+                {article cat="news" item="vo" child="1" limit="6" order="1" by="time"}
+                <li>
+                    <div class="box pt-30 pb-30 pl-45 pr-45">
+                        <div class="flex flex-jb flex-ac">
+                            <div class="time font-14">{$vo.publish_time|date='Y-m-d',###}</div>
+                            <a rel="nofollow" href="{$vo.url}" class="arrow"><i class="iconfont iconfont-arrow-right1"></i></a>
+                        </div>
+                        <div class="text-hide-2  mt-13 mb-21"><a href="{$vo.url}" class="title txt-center block font-20 font-bold ">{$vo.title}</a>
+                        </div>
+                        <div class="des font-14 pt-25 pb-25 pl-30 pr-30 radius-10">
+                            <div class="text-hide-2">
+                                {$vo.content|nohtml|getSubstr=0,100}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {/article}
+            </ul>
+        </div>
+    </div>
+    <div class="Auxil-form">
+        <div class="ui container">
+            <div class="title">Message Feedback</div>
+            <div class="form">
+                {forms pid='1' /}
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.wrapper-->
+{include file="index/footer"/}

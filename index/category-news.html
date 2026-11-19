@@ -1,0 +1,51 @@
+{include file="index/header"/}
+{include file="index/header-nav"/}
+<!--=====================INNER BANNER=====================-->
+<div class="inner-banner pre">
+    <div class="ui container pl-50 pr-50 flex-ac flex">
+        <div class="bannerLine"></div>
+        <div class="pt-100 pb-20">
+            <div class="catTitle font-60">
+                {$cat_detail['cat_name']}
+            </div>
+            <div class="mbx Auxil-crumbs mt-10 flex font-16">
+                <div class="sub mr-10"></div>
+                <div class="mbxC Auxil-crumbs">
+                    {:get_link()}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=====================MAIN CONTENT=====================-->
+<div class="inner-page news-page">
+    <div class="ui container">
+        <div class="news-tab">
+            <ul class="flex flex-w animate-father" data-child="li" data-effect="fadeInUp" data-delay=".2">
+                <li><a rel="nofollow" class="{$cat_detail['alias']=='news'?'active':''}" href="/news/">All</a></li>
+                {nav item="vo" cat="news" limit="12" child="1"}
+                <li><a class="{$vo.alias|is_active}" href="{$vo.url}">{$vo.cat_name}</a></li>
+                {/nav}
+            </ul>
+        </div>
+        <div class="news-list">
+            <ul class="grid grid-3 animate-father" data-child="li" data-effect="fadeInUp" data-delay=".1">
+                {article item="vo" order="1" by="time" limit="12" child="1" no_p="1" page_num="5"}
+                <li class="column">
+                    <div class="text">
+                        <div class="top flex flex-ac flex-w flex-jb">
+                            <span>{$nav2[$vo.cat_id]['cat_name']}</span>
+                            <time>{$vo.publish_time|date='Y/m/d',###}</time>
+                        </div>
+                        <div class="text-hide-2"><a class="tit block" href="{$vo.url}">{$vo.title}</a></div>
+                        <a rel="nofollow" class="more2" rel="nofollow" href="{$vo.url}"><span></span></a>
+                    </div>
+                </li>
+                {/article}
+            </ul>
+            <div class="m-page">{$pager}</div>
+        </div>
+    </div>
+</div>
+<!--/.wrapper-->
+{include file="index/footer"/}
